@@ -7,9 +7,20 @@ from flask_migrate import Migrate
 from flask_swagger import swagger
 from api.utils import APIException, generate_sitemap
 from api.models import db
-from api.routes import api
+# from api.routes import api
 from api.admin import setup_admin
 from api.commands import setup_commands
+
+
+from flask import Flask
+from api.routes import api
+
+
+app = Flask(__name__)
+
+# Register the Blueprint
+app.register_blueprint(api, url_prefix='/api')
+
 
 # from models import Person
 
