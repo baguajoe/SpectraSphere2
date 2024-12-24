@@ -23,7 +23,8 @@ const Layout = () => {
                 <ScrollToTop>
                     <Navbar />
                     <Routes>
-                        <Route element={<Home />} path="/" />
+                        <Route element={<LandingPage />} path="/" /> {/* Set LandingPage as the default */}
+                        <Route element={<Home />} path="/home" /> {/* Move Home to its own path */}
                         <Route element={<LandingPage />} path="/landing-page" />
                         <Route element={<Demo />} path="/demo" />
                         <Route element={<Single />} path="/single/:theid" />

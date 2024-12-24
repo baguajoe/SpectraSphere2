@@ -1,145 +1,206 @@
-Global Styles
+/* General Styles */
 body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-  }
-  
-  .landing-page {
-    text-align: center;
-    color: #333;
-  }
-  
-  /* Header Styles */
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f9f9f9;
+  color: #2c3e50;
+}
+
+h1, h2, h3 {
+  color: #27ae60;
+}
+
+/* Header Section */
+.header {
+  background: linear-gradient(135deg, #2c3e50, #27ae60);
+  color: white;
+  padding: 40px 20px;
+}
+
+.header-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.header .cta-buttons {
+  margin-top: 20px;
+}
+
+.btn-primary {
+  background-color: #27ae60;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 30px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.btn-secondary {
+  background-color: white;
+  color: #27ae60;
+  border: 2px solid #27ae60;
+  padding: 10px 20px;
+  border-radius: 30px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.btn-primary:hover, .btn-secondary:hover {
+  background-color: #218c54;
+  color: white;
+  border-color: #218c54;
+  transition: all 0.3s ease;
+}
+
+/* Main Banner Section */
+.main-banner {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 60px 20px;
+  background: linear-gradient(135deg, #ffffff, #f9f9f9);
+}
+
+.banner-text {
+  max-width: 600px;
+}
+
+.banner-text h1 {
+  font-size: 2.5em;
+}
+
+.banner-text p {
+  color: #555;
+  margin: 10px 0;
+}
+
+.phone-image img {
+  border-radius: 10px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Features Section */
+.features {
+  background-color: #ffffff;
+  padding: 60px 20px;
+}
+
+.features h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #2c3e50;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  margin-top: 20px;
+}
+
+.feature {
+  background: linear-gradient(135deg, #27ae60, #2c3e50);
+  color: white;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  text-align: left;
+}
+
+.feature h3 {
+  color: #ffffff;
+  margin-bottom: 10px;
+}
+
+.feature ul {
+  list-style: none;
+  padding: 0;
+}
+
+.feature ul li {
+  margin-bottom: 10px;
+  color: #c1ffc9;
+}
+
+.feature ul li strong {
+  color: #ffffff;
+}
+
+/* Get In Touch Section */
+.get-in-touch {
+  text-align: center;
+  padding: 60px 20px;
+  background: linear-gradient(135deg, #2c3e50, #27ae60);
+  color: white;
+}
+
+.get-in-touch h2 {
+  margin-bottom: 20px;
+  color: #ffffff;
+}
+
+.get-in-touch form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.get-in-touch input {
+  width: 80%;
+  max-width: 400px;
+  padding: 15px;
+  margin: 10px 0;
+  border-radius: 30px;
+  border: none;
+  font-size: 1em;
+}
+
+.get-in-touch button {
+  background-color: #ffffff;
+  color: #27ae60;
+  padding: 10px 30px;
+  border-radius: 30px;
+  border: 2px solid #27ae60;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.get-in-touch button:hover {
+  background-color: #218c54;
+  color: white;
+  border-color: #218c54;
+  transition: all 0.3s ease;
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  background-color: #2c3e50;
+  color: white;
+  padding: 20px;
+}
+
+.footer-text {
+  margin: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
   .main-banner {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    padding: 50px;
-    background-color: #f9f9f9;
-  }
-  
-  .banner-text {
-    max-width: 600px;
-    text-align: left;
-  }
-  
-  .banner-text h1 {
-    font-size: 2.5em;
-    margin-bottom: 20px;
-    color: #2c3e50;
-  }
-  
-  .banner-text p {
-    font-size: 1.2em;
-    margin-bottom: 30px;
-    color: #555;
-  }
-  
-  .cta-buttons {
-    display: flex;
-    gap: 15px;
-  }
-  
-  .primary-btn,
-  .secondary-btn {
-    padding: 10px 20px;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
-  }
-  
-  .primary-btn {
-    background-color: #3498db;
-    color: white;
-  }
-  
-  .secondary-btn {
-    background-color: white;
-    color: #3498db;
-    border: 2px solid #3498db;
-  }
-  
-  /* Phone Image */
-  .phone-image img {
-    width: 250px;
-    height: auto;
-    border-radius: 10px;
-  }
-  
-  /* Features Section */
-  .features-section {
-    padding: 50px;
-  }
-  
-  .features-section h2 {
-    font-size: 2em;
-    margin-bottom: 20px;
-  }
-  
-  .features-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 30px;
-  }
-  
-  .feature {
-    text-align: center;
-    padding: 20px;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-  }
-  
-  .feature h3 {
-    margin-bottom: 15px;
-    font-size: 1.5em;
-  }
-  
-  .feature p {
-    color: #666;
-  }
-  
-  /* Get In Touch */
-  .get-in-touch {
-    padding: 50px;
-    background-color: #f4f4f4;
-  }
-  
-  .get-in-touch h2 {
-    font-size: 2em;
-    margin-bottom: 20px;
-  }
-  
-  .get-in-touch form {
-    display: flex;
     flex-direction: column;
-    gap: 15px;
-    max-width: 400px;
-    margin: 0 auto;
+    text-align: center;
   }
-  
-  .get-in-touch input,
-  .get-in-touch button {
-    padding: 10px;
-    font-size: 1em;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+
+  .features-grid {
+    grid-template-columns: 1fr;
   }
-  
-  .get-in-touch button {
-    background-color: #3498db;
-    color: white;
-    border: none;
-    cursor: pointer;
+
+  .get-in-touch form input {
+    width: 90%;
   }
-  
-  /* Footer */
-  .footer {
-    padding: 20px;
-    background-color: #2c3e50;
-    color: white;
-  }
-  
-  .footer p {
-    margin: 0;
-  }
-  
+}

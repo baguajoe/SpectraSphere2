@@ -2,21 +2,19 @@ import React from "react";
 import Header from "../component/Header";
 import Features from "../component/Features";
 import GetInTouch from "../component/GetInTouch";
-// import Footer from "../component/footer";
-// import "../style/landingPage.css";
-
+import { Footer } from "../component/footer"; // Import using curly braces
+import "../../styles/landingPage.css";
 
 const LandingPage = () => {
   return (
     <div className="landing-page">
       <Header />
+      {/* Main banner section */}
       <section className="main-banner">
         <div className="banner-text">
-          <h1>DispenseMaster: Dispense Smarter, Grow Faster</h1>
+          <h1>From Seed to Sale, DispenseMaster Manages It All.</h1>
           <p>
-            DispenseMaster is your all-in-one platform for managing dispensary
-            operations. From inventory tracking and CRM to compliance
-            automation, our app simplifies every aspect of your business.
+            DispenseMaster by <strong>SpectraSphere</strong> streamlines cannabis operations with advanced tools for compliance, inventory management, and networking—empowering your business to thrive in a competitive market.
           </p>
           <div className="cta-buttons">
             <button className="primary-btn">Get Started</button>
@@ -30,9 +28,15 @@ const LandingPage = () => {
           />
         </div>
       </section>
+      {/* Features section */}
       <Features />
       <GetInTouch />
-      <Footer />
+      {/* Footer Section */}
+      <Footer>
+        <p className="footer-text">
+          DispenseMaster is brought to you by <strong>SpectraSphere</strong>—Innovating the future of cannabis technology.
+        </p>
+      </Footer>
     </div>
   );
 };
