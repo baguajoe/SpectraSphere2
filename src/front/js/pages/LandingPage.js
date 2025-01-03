@@ -6,6 +6,7 @@ import AboutSpectraSphere from "../component/AboutSpectraSphere"; // Import the 
 import { Footer } from "../component/footer"; // Import using curly braces
 import "../../styles/landingPage.css";
 import "../../styles/aboutSpectraSphere.css";
+import leaf from "../../img/leaf.jpg"
 
 
 const LandingPage = () => {
@@ -69,7 +70,7 @@ const LandingPage = () => {
         </div>
         <div className="placeholder-image">
           <img
-            src="/leaf.jpg"
+            src={leaf}
             alt="LeafBridgeConnect Preview"
           />
         </div>

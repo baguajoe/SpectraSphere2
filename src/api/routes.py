@@ -5,6 +5,8 @@ from flask import Flask, request, jsonify, Blueprint
 from api.models import db, User, Subscription, Product  # Ensure all models are imported
 from api.utils import generate_sitemap, APIException
 from flask_cors import CORS
+from api.send_email import send_email
+import os
 
 # Define the Blueprint
 api = Blueprint('api', __name__)
@@ -77,3 +79,22 @@ def create_product():
 def get_products():
     products = Product.query.all()
     return jsonify([{'id': prod.id, 'name': prod.name, 'price': prod.price, 'stock': prod.stock} for prod in products])
+
+@api.route("/contact-us", methods=["POST"])
+def contactUs():
+    data = request.json
+    email = data.get("email")
+    comment = data.get("comment")
+    if not email:
+        return jsonify({"message": "Email is required"}), 400    
+    if not comment:
+        return jsonify({"message": "Please give us your comment."}), 400 
+    
+    # Get email from environment variable
+    admin_email = os.getenv("GMAIL")
+    if not admin_email:
+        return jsonify({"message": "Server configuration error"}), 500
+        
+    email_value = email + "\n\n" + comment
+    send_email(admin_email, email_value, "Comment from the user")
+    return jsonify({"message": "Thank you for your comment."}), 200
