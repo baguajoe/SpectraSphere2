@@ -10,6 +10,9 @@ import injectContext from "./store/appContext";
 
 import { Navbar } from "./component/navbar";
 import LandingPage from "./pages/LandingPage";
+import PartnershipPage from "./pages/PartnershipPage";
+import EarlyAccess from "./component/EarlyAccessPage";
+import ContactUs from "./pages/ContactUs";
 
 //create your first component
 const Layout = () => {
@@ -24,6 +27,9 @@ const Layout = () => {
                     <Navbar />
                     <Routes>
                         <Route element={<LandingPage />} path="/" /> {/* Set LandingPage as the default */}
+                        <Route path="/partnership-page" element={<PartnershipPage />} />
+                        <Route path="/early-access" element={<EarlyAccess />} />
+                        <Route path="/contact-us" element={<ContactUs />} />
                         <Route element={<Home />} path="/home" /> {/* Move Home to its own path */}
                         <Route element={<LandingPage />} path="/landing-page" />
                         <Route element={<Demo />} path="/demo" />

@@ -1,0 +1,42 @@
+.about-spectrasphere h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #001f3f; /* Navy Blue text for emphasis */
+}
+  
+  .about-spectrasphere-card {
+    background: linear-gradient(135deg, #27ae60, #2c3e50);
+    border-radius: 10px;
+    padding: 40px 20px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Box shadow for elevation */
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .about-spectrasphere .about-spectrasphere-card h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #001f3f !important; /* Use !important as a last resort to force the color */
+}
+  
+  .about-spectrasphere p {
+    font-size: 1.2em;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    color: #d1d1d1; /* Slightly lighter text for readability */
+  }
+  
+  .about-spectrasphere .separator {
+    width: 100px;
+    height: 5px;
+    background-color: #27ae60; /* Green separator for styling */
+    margin: 20px auto;
+    border-radius: 5px;
+  }
+  

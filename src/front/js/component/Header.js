@@ -9,7 +9,7 @@ const Header = () => {
           Unite your cannabis operations under one intuitive platform.
         </p>
         <div className="cta-buttons">
-          <button className="btn-primary">Get Started</button>
+          <button className="btn-primary">Sign Up For Updates</button>
           <button className="btn-secondary">Learn More</button>
         </div>
       </div>
