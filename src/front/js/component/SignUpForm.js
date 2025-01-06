@@ -13,7 +13,11 @@ const SignUpForm = () => {
     comments: "",
   });
 
-  const [message, setMessage] = useState("");
+  const [status, setStatus] = useState({
+    message: "",
+    isError: false,
+    isSubmitting: false
+  });
 
   const effectsOptions = [
     "Relaxation",
@@ -52,8 +56,10 @@ const SignUpForm = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setStatus({ message: "", isError: false, isSubmitting: true });
+
     try {
-      const response = await fetch("/contact-us", {
+      const response = await fetch(process.env.BACKEND_URL + "/api/signup", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -62,23 +68,36 @@ const SignUpForm = () => {
       });
 
       const data = await response.json();
-      if (response.ok) {
-        setMessage("Thank you for signing up!");
-        setFormData({
-          email: "",
-          favoriteStrain: "",
-          category: "",
-          effects: [],
-          flavor: "",
-          consumptionMethod: "",
-          potencyPreference: "",
-          comments: "",
-        });
-      } else {
-        setMessage(data.message || "An error occurred.");
+
+      if (!response.ok) {
+        throw new Error(data.message || "Failed to submit sign-up form");
       }
+
+      // Clear form on success
+      setFormData({
+        email: "",
+        favoriteStrain: "",
+        category: "",
+        effects: [],
+        flavor: "",
+        consumptionMethod: "",
+        potencyPreference: "",
+        comments: "",
+      });
+
+      setStatus({
+        message: data.message || "Thank you for signing up!",
+        isError: false,
+        isSubmitting: false
+      });
+
     } catch (error) {
-      setMessage("Failed to submit the form. Please try again.");
+      console.error("Submission error:", error);
+      setStatus({
+        message: error.message || "Something went wrong. Please try again.",
+        isError: true,
+        isSubmitting: false
+      });
     }
   };
 
@@ -86,6 +105,12 @@ const SignUpForm = () => {
     <form className="signup-form" onSubmit={handleSubmit}>
       <h2>Sign Up for Updates</h2>
       <p>Tell us what you’re looking for, and we’ll keep you informed!</p>
+
+      {status.message && (
+        <div className={`alert ${status.isError ? "alert-error" : "alert-success"}`}>
+          {status.message}
+        </div>
+      )}
 
       <label htmlFor="email">1. Email Address:</label>
       <input
@@ -189,11 +214,9 @@ const SignUpForm = () => {
         onChange={handleChange}
       ></textarea>
 
-      <button type="submit" className="primary-btn">
-        Submit
+      <button type="submit" className="primary-btn" disabled={status.isSubmitting}>
+        {status.isSubmitting ? "Submitting..." : "Submit"}
       </button>
-
-      {message && <p className="form-message">{message}</p>}
     </form>
   );
 };

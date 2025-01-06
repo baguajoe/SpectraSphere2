@@ -14,6 +14,12 @@ const PartnershipForm = () => {
     comments: "",
   });
 
+  const [status, setStatus] = useState({
+    message: "",
+    isError: false,
+    isSubmitting: false
+  });
+
   const partnershipGoals = [
     "Access to AI tools",
     "Networking opportunities",
@@ -42,16 +48,64 @@ const PartnershipForm = () => {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(formData);
-    // Add functionality to send the form data to the backend
+    setStatus({ message: "", isError: false, isSubmitting: true });
+
+    try {
+      const response = await fetch(process.env.BACKEND_URL + "/api/partnership", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData)
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.message || "Failed to submit partnership application");
+      }
+
+      // Clear form on success
+      setFormData({
+        email: "",
+        businessName: "",
+        businessType: "",
+        location: "",
+        goals: [],
+        currentTools: "",
+        challenges: "",
+        contactMethod: "email",
+        comments: "",
+      });
+
+      setStatus({
+        message: data.message || "Thank you for your partnership application!",
+        isError: false,
+        isSubmitting: false
+      });
+
+    } catch (error) {
+      console.error("Submission error:", error);
+      setStatus({
+        message: error.message || "Something went wrong. Please try again.",
+        isError: true,
+        isSubmitting: false
+      });
+    }
   };
 
   return (
     <form className="partnership-form" onSubmit={handleSubmit}>
       <h2>Partner with Us</h2>
 
+      {status.message && (
+        <div className={`alert ${status.isError ? "alert-error" : "alert-success"}`}>
+          {status.message}
+        </div>
+      )}
+      
       <label htmlFor="email">1. Email Address:</label>
       <input
         type="email"
@@ -147,8 +201,8 @@ const PartnershipForm = () => {
         onChange={handleChange}
       ></textarea>
 
-      <button type="submit" className="primary-btn">
-        Submit
+      <button type="submit" className="primary-btn" disabled={status.isSubmitting}>
+        {status.isSubmitting ? "Submitting..." : "Submit"}
       </button>
     </form>
   );

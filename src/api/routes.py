@@ -124,3 +124,103 @@ def contactUs():
     except Exception as e:
         logging.error(f"Error sending email: {str(e)}")
         return jsonify({"success": False, "message": "Internal server error"}), 500
+
+
+@api.route("/partnership", methods=["POST"])
+def handle_partnership():
+    data = request.json
+    email = data.get("email")
+    
+    # Validate email
+    if not email or not re.match(r"[^@]+@[^@]+\.[^@]+", email):
+        return jsonify({"success": False, "message": "Valid email is required"}), 400
+
+    # Format email content
+    email_content = f"""
+Partnership Application Details:
+
+1. Contact Information:
+   - Email: {escape(email)}
+   - Business Name: {escape(data.get('businessName', 'Not provided'))}
+   - Location: {escape(data.get('location', 'Not provided'))}
+   - Preferred Contact Method: {escape(data.get('contactMethod', 'Email'))}
+
+2. Business Information:
+   - Business Type: {escape(data.get('businessType', 'Not provided'))}
+   - Current Tools/Platforms: {escape(data.get('currentTools', 'Not provided'))}
+   - Business Challenges: {escape(data.get('challenges', 'Not provided'))}
+
+3. Partnership Goals:
+   {escape(', '.join(data.get('goals', ['None specified'])))}
+
+4. Additional Comments:
+   {escape(data.get('comments', 'No additional comments'))}
+"""
+
+    # Get admin email
+    admin_email = os.getenv("GMAIL")
+    if not admin_email:
+        logging.error("Admin email not configured")
+        return jsonify({"success": False, "message": "Server configuration error"}), 500
+
+    # Send email
+    try:
+        send_email(admin_email, email_content, "New Partnership Application")
+        logging.info(f"Partnership application received from: {email}")
+        return jsonify({
+            "success": True,
+            "message": "Thank you for your partnership application!",
+            "details": "Your application has been received. Our team will review it and contact you within 2-3 business days."
+        }), 200
+    except Exception as e:
+        logging.error(f"Error sending partnership email: {str(e)}")
+        return jsonify({"success": False, "message": "Internal server error"}), 500
+
+@api.route("/signup", methods=["POST"])
+def handle_signup():
+    data = request.json
+    email = data.get("email")
+    
+    # Validate email
+    if not email or not re.match(r"[^@]+@[^@]+\.[^@]+", email):
+        return jsonify({"success": False, "message": "Valid email is required"}), 400
+
+    # Format email content
+    email_content = f"""
+New User Sign-up Details:
+
+1. Contact Information:
+   - Email: {escape(email)}
+
+2. Cannabis Preferences:
+   - Favorite Strain: {escape(data.get('favoriteStrain', 'Not specified'))}
+   - Category Preference: {escape(data.get('category', 'Not specified'))}
+   - Preferred Potency: {escape(data.get('potencyPreference', 'Not specified'))}
+   - Preferred Consumption Method: {escape(data.get('consumptionMethod', 'Not specified'))}
+   - Favorite Flavor/Aroma: {escape(data.get('flavor', 'Not specified'))}
+
+3. Desired Effects:
+   {escape(', '.join(data.get('effects', ['None specified'])))}
+
+4. Additional Comments:
+   {escape(data.get('comments', 'No additional comments'))}
+"""
+
+    # Get admin email
+    admin_email = os.getenv("GMAIL")
+    if not admin_email:
+        logging.error("Admin email not configured")
+        return jsonify({"success": False, "message": "Server configuration error"}), 500
+
+    # Send email
+    try:
+        send_email(admin_email, email_content, "Personalization Data Form")
+        logging.info(f"Sign-up received from: {email}")
+        return jsonify({
+            "success": True,
+            "message": "Thank you for signing up!",
+            "details": "We've received your preferences and will keep you updated on our latest developments."
+        }), 200
+    except Exception as e:
+        logging.error(f"Error sending signup email: {str(e)}")
+        return jsonify({"success": False, "message": "Internal server error"}), 500
