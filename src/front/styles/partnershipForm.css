@@ -1,0 +1,111 @@
+/* Partnership Form Container */
+.partnership-form {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #001f3f; /* Dark blue background */
+    color: #f9f9f9; /* Light text for readability */
+    padding: 40px 20px;
+    border-radius: 10px;
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+    text-align: left;
+  }
+  
+  .partnership-form h2 {
+    font-size: 2em;
+    color: #27ae60; /* Green heading */
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .partnership-form p {
+    font-size: 1.2em;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    color: #c1ffc9; /* Soft green for body text */
+    text-align: center;
+  }
+  
+  /* Input and Select Fields */
+  .partnership-form input,
+  .partnership-form select,
+  .partnership-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+    background-color: #f9f9f9;
+    color: #2c3e50;
+    outline: none;
+    transition: border-color 0.3s ease;
+  }
+  
+  .partnership-form input:focus,
+  .partnership-form select:focus,
+  .partnership-form textarea:focus {
+    border-color: #27ae60; /* Green border on focus */
+  }
+  
+  /* Labels */
+  .partnership-form label {
+    font-size: 1em;
+    font-weight: bold;
+    color: #f9f9f9;
+    margin-bottom: 10px;
+    display: block;
+  }
+  
+  /* Checkbox and Radio Options */
+  .partnership-form .checkbox-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .partnership-form .checkbox-group label {
+    font-size: 0.9em;
+    color: #c1ffc9;
+    display: flex;
+    align-items: center;
+  }
+  
+  .partnership-form .checkbox-group input {
+    margin-right: 10px;
+  }
+  
+  /* Submit Button */
+  .partnership-form .primary-btn {
+    background-color: #27ae60; /* Green button */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 30px;
+    font-size: 1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    width: 100%; /* Full width for balance */
+  }
+  
+  .partnership-form .primary-btn:hover {
+    background-color: #218c54; /* Darker green on hover */
+    transform: translateY(-2px); /* Slight lift effect */
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .partnership-form {
+      padding: 30px 15px;
+    }
+  
+    .partnership-form h2 {
+      font-size: 1.8em;
+    }
+  
+    .partnership-form p {
+      font-size: 1em;
+    }
+  }
+  

@@ -10,9 +10,11 @@ import injectContext from "./store/appContext";
 
 import { Navbar } from "./component/navbar";
 import LandingPage from "./pages/LandingPage";
-import PartnershipPage from "./pages/PartnershipPage";
-import EarlyAccess from "./component/EarlyAccessPage";
-import ContactUs from "./pages/ContactUs";
+import AboutUs from "./pages/AboutUs"; // Import AboutPage
+import ContactUs from "./pages/ContactUs"; // Import AboutPage
+import PartnershipPage from "./pages/PartnershipPage"; // Import the page
+import SignUp from "./pages/SignUp"; // Import SignUp component
+// import NotFound from "./pages/NotFound"; // Optional: Import a NotFound component for invalid routes
 
 //create your first component
 const Layout = () => {
@@ -27,14 +29,20 @@ const Layout = () => {
                     <Navbar />
                     <Routes>
                         <Route element={<LandingPage />} path="/" /> {/* Set LandingPage as the default */}
-                        <Route path="/partnership-page" element={<PartnershipPage />} />
-                        <Route path="/early-access" element={<EarlyAccess />} />
-                        <Route path="/contact-us" element={<ContactUs />} />
+                        <Route path="/about-us" element={<AboutUs />} /> {/* About Us Page */}
+                        <Route path="/partnership" element={<PartnershipPage />} />; // Add route
+                        <Route path="/sign-up" element={<SignUp />} />
+                        <Route path="/contact-us" element={<ContactUs/>} />
                         <Route element={<Home />} path="/home" /> {/* Move Home to its own path */}
                         <Route element={<LandingPage />} path="/landing-page" />
                         <Route element={<Demo />} path="/demo" />
                         <Route element={<Single />} path="/single/:theid" />
-                        <Route element={<h1>Not found!</h1>} />
+                        {/* <Route element={<h1>Not found!</h1>} /> */}
+
+
+                        {/* Optional: Fallback for invalid routes */}
+                        {/* <Route path="*" element={<NotFound />} /> */}
+
                     </Routes>
                 </ScrollToTop>
             </BrowserRouter>

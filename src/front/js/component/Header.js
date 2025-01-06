@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
@@ -9,8 +10,10 @@ const Header = () => {
           Unite your cannabis operations under one intuitive platform.
         </p>
         <div className="cta-buttons">
-          <button className="btn-primary">Sign Up For Updates</button>
-          <button className="btn-secondary">Learn More</button>
+          <Link to="/sign-up">
+            <button className="btn-primary">Sign Up For Updates</button>
+          </Link>
+          {/* <button className="btn-secondary">Learn More</button> */}
         </div>
       </div>
     </header>

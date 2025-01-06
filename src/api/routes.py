@@ -1,12 +1,14 @@
-"""
-This module takes care of starting the API Server, Loading the DB, and Adding the endpoints.
-"""
+import os
+import re
+import logging
 from flask import Flask, request, jsonify, Blueprint
 from api.models import db, User, Subscription, Product  # Ensure all models are imported
 from api.utils import generate_sitemap, APIException
 from flask_cors import CORS
 from api.send_email import send_email
-import os
+# from flask_limiter import Limiter
+# from flask_limiter.util import get_remote_address
+from html import escape
 
 # Define the Blueprint
 api = Blueprint('api', __name__)
@@ -80,21 +82,45 @@ def get_products():
     products = Product.query.all()
     return jsonify([{'id': prod.id, 'name': prod.name, 'price': prod.price, 'stock': prod.stock} for prod in products])
 
+# Logging setup
+logging.basicConfig(level=logging.INFO)
+
+# Rate limiter
+# limiter = Limiter(get_remote_address, app=app)
+
 @api.route("/contact-us", methods=["POST"])
+# @limiter.limit("5 per minute")
 def contactUs():
     data = request.json
     email = data.get("email")
     comment = data.get("comment")
-    if not email:
-        return jsonify({"message": "Email is required"}), 400    
-    if not comment:
-        return jsonify({"message": "Please give us your comment."}), 400 
-    
-    # Get email from environment variable
+
+    # Validate email
+    if not email or not re.match(r"[^@]+@[^@]+\.[^@]+", email):
+        return jsonify({"success": False, "message": "Valid email is required"}), 400
+
+    # Validate comment
+    if not comment or len(comment.strip()) == 0:
+        return jsonify({"success": False, "message": "Please provide a valid comment"}), 400
+    if len(comment) > 500:
+        return jsonify({"success": False, "message": "Comment should not exceed 500 characters"}), 400
+
+    # Get admin email
     admin_email = os.getenv("GMAIL")
     if not admin_email:
-        return jsonify({"message": "Server configuration error"}), 500
-        
-    email_value = email + "\n\n" + comment
-    send_email(admin_email, email_value, "Comment from the user")
-    return jsonify({"message": "Thank you for your comment."}), 200
+        logging.error("Admin email not configured")
+        return jsonify({"success": False, "message": "Server configuration error"}), 500
+
+    # Send email
+    try:
+        email_value = f"From: {escape(email)}\n\nComment:\n{escape(comment)}"
+        send_email(admin_email, email_value, "Comment from the user")
+        logging.info(f"Comment received from: {email}")
+        return jsonify({
+            "success": True,
+            "message": "Thank you for your comment.",
+            "details": "Your feedback has been sent to our team. We will get back to you within 24-48 hours."
+        }), 200
+    except Exception as e:
+        logging.error(f"Error sending email: {str(e)}")
+        return jsonify({"success": False, "message": "Internal server error"}), 500

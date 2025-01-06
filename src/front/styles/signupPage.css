@@ -1,0 +1,179 @@
+/* SignUp Page Styles */
+.signup-page {
+  background-color: #f9f9f9;
+  color: #2c3e50;
+  padding: 60px 20px;
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+}
+
+/* Section Heading */
+.signup-page h1 {
+  font-size: 2.5em;
+  color: #27ae60; /* Green text */
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.signup-page h2 {
+  font-size: 2em;
+  color: #27ae60;
+  margin-bottom: 15px;
+}
+
+/* Paragraph Styling */
+.signup-page p {
+  font-size: 1.2em;
+  line-height: 1.6;
+  margin: 0 auto 20px;
+  color: #2c3e50; /* Dark text for better readability */
+  max-width: 800px;
+}
+
+/* List Styling */
+.signup-page ul {
+  list-style-type: disc;
+  margin: 20px auto;
+  padding: 0;
+  max-width: 600px;
+  text-align: left;
+}
+
+.signup-page ul li {
+  font-size: 1em;
+  margin-bottom: 10px;
+  color: #2c3e50; /* Darker gray for list items */
+}
+
+.signup-page ul li strong {
+  color: #27ae60; /* Highlighted green */
+}
+
+/* Button Styling */
+.signup-page .primary-btn {
+  background-color: #27ae60;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1em;
+  border-radius: 30px;
+  cursor: pointer;
+  font-weight: bold;
+  margin-top: 20px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.signup-page .primary-btn:hover {
+  background-color: #218c54; /* Darker green on hover */
+  transform: translateY(-3px); /* Slight lift effect */
+}
+
+/* Form Container */
+.signup-form {
+  max-width: 600px;
+  margin: 0 auto;
+  background-color: #001f3f; /* Dark blue background */
+  color: #f9f9f9; /* Light text for readability */
+  padding: 40px 20px;
+  border-radius: 10px;
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+  text-align: left;
+}
+
+.signup-form h2 {
+  font-size: 2em;
+  color: #27ae60; /* Green heading */
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.signup-form p {
+  font-size: 1.2em;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  color: #c1ffc9; /* Soft green for body text */
+  text-align: center;
+}
+
+/* Input and Select Fields */
+.signup-form input,
+.signup-form select,
+.signup-form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1em;
+  background-color: #f9f9f9;
+  color: #2c3e50;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.signup-form input:focus,
+.signup-form select:focus,
+.signup-form textarea:focus {
+  border-color: #27ae60; /* Green border on focus */
+}
+
+/* Labels */
+.signup-form label {
+  font-size: 1em;
+  font-weight: bold;
+  color: #f9f9f9;
+  margin-bottom: 10px;
+  display: block;
+}
+
+/* Checkbox and Radio Options */
+.signup-form .checkbox-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.signup-form .checkbox-group label {
+  font-size: 0.9em;
+  color: #c1ffc9;
+  display: flex;
+  align-items: center;
+}
+
+.signup-form .checkbox-group input {
+  margin-right: 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .signup-page {
+    padding: 40px 15px;
+  }
+
+  .signup-page h1, .signup-page h2 {
+    font-size: 2em;
+  }
+
+  .signup-page p {
+    font-size: 1em;
+    margin-bottom: 15px;
+  }
+
+  .signup-form {
+    padding: 30px 15px;
+  }
+
+  .signup-form h2 {
+    font-size: 1.8em;
+  }
+
+  .signup-form p {
+    font-size: 1em;
+  }
+
+  .primary-btn {
+    font-size: 0.9em;
+    padding: 8px 15px;
+  }
+}

@@ -1,19 +1,31 @@
 import React from "react";
-import PartnershipPage from "../component/PartnershipComponent";
-import { Footer } from "../component/footer"; // Import footer component
-// import "../../styles/partnershippage.css";
+import PartnershipForm from "../component/PartnershipForm"; // Import the form component
+import "../../styles/partnershipPage.css";
 
-const PartnershipPageComponent = () => {
+const PartnershipPage = () => {
   return (
-    <div className="partnership-page-container">
-      <PartnershipPage />
-      <Footer>
-        <p className="footer-text">
-          SpectraSphere is innovating the future of cannabis technology. Join us in shaping the industry.
+    <div className="partnership-page">
+      <section className="partnership-intro">
+        <h1>Partner with Us</h1>
+        <p>
+          Join forces with <strong>SpectraSphere</strong> to revolutionize the cannabis industry. 
+          Whether you’re a dispensary owner, grow farm operator, or seedbank owner, our platforms are tailored to help you thrive in this competitive market.
         </p>
-      </Footer>
+        <h2>Why Partner with Us?</h2>
+        <ul>
+          <li>Access to real-time price comparison and deals.</li>
+          <li>Enhanced customer reach through AI-powered Weed Strain Recognizer.</li>
+          <li>Opportunities to educate and recruit through LeafBridgeConnect.</li>
+          <li>Dedicated job posting board to attract top talent in the industry.</li>
+        </ul>
+      </section>
+
+      {/* Partnership Form Section */}
+      <section className="partnership-form-section">
+        <PartnershipForm /> {/* Embed the form component here */}
+      </section>
     </div>
   );
 };
 
-export default PartnershipPageComponent;
+export default PartnershipPage;

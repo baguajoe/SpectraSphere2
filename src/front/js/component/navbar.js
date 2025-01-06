@@ -34,13 +34,19 @@ export const Navbar = () => {
               </Link>
             </li>
             <li className="nav-item">
+              <Link to="/about-us" className="nav-link">
+                About Us
+              </Link>
+            </li>
+            
+            <li className="nav-item">
               <Link to="/partnership" className="nav-link">
                 Partnership
               </Link>
             </li>
             <li className="nav-item">
-              <Link to="/early-access" className="nav-link">
-                Early Access
+              <Link to="/sign-up" className="nav-link">
+                SignUp
               </Link>
             </li>
             <li className="nav-item">
@@ -49,13 +55,12 @@ export const Navbar = () => {
               </Link>
             </li>
           </ul>
-          {/* Button to redirect */}
-          <button
+          {/* <button
             className="btn btn-primary ms-3"
             onClick={handleButtonClick}
           >
             Sign Up for Early Access
-          </button>
+          </button> */}
         </div>
       </div>
     </nav>

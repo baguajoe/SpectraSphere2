@@ -1,0 +1,21 @@
+.about-section {
+    padding: 60px 20px;
+    background-color: #001f3f; /* Dark blue */
+    color: #f9f9f9; /* Light text */
+    text-align: center;
+  }
+  
+  .about-section h2 {
+    font-size: 2.5em;
+    color: #27ae60; /* Green heading */
+    margin-bottom: 20px;
+  }
+  
+  .about-section p {
+    font-size: 1.2em;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto 20px;
+    color: #c1ffc9; /* Soft green for body text */
+  }
+  

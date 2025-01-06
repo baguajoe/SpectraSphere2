@@ -5,6 +5,9 @@ import os
 from flask import Flask, request, jsonify, url_for, send_from_directory
 from flask_migrate import Migrate
 from flask_swagger import swagger
+# from flask_limiter import Limiter
+# from flask_limiter.util import get_remote_address
+
 from api.utils import APIException, generate_sitemap
 from api.models import db
 # from api.routes import api
@@ -76,6 +79,12 @@ def serve_any_other_file(path):
     response.cache_control.max_age = 0  # avoid cache memory
     return response
 
+# Initialize Limiter with the app
+# limiter = Limiter(
+#     get_remote_address,  # Determines the client's IP address
+#     app=app,
+#     default_limits=["200 per day", "50 per hour"]  # Global rate limits
+# )
 
 # this only runs if `$ python src/main.py` is executed
 if __name__ == '__main__':
