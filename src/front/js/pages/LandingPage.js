@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom"; // Import navigation hook
 import Header from "../component/Header";
 import Features from "../component/Features";
 import GetInTouch from "../component/GetInTouch";
-import { Footer } from "../component/footer";
+// import { Footer } from "../component/footer";
 import "../../styles/landingPage.css";
 import "../../styles/aboutSpectraSphere.css";
 import leaf from "../../img/leaf.jpg";
@@ -156,11 +156,11 @@ const LandingPage = () => {
       <GetInTouch />
 
       {/* Footer Section */}
-      <Footer>
+      {/* <Footer>
         <p className="footer-text">
           DispenseMaster and LeafBridgeConnect are powered by <strong>your input</strong>. Together, we’re building smarter AI for the future of cannabis.
         </p>
-      </Footer>
+      </Footer> */}
     </div>
   );
 };

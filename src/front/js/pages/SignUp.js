@@ -1,12 +1,11 @@
 import React from "react";
 import SignUpForm from "../component/SignUpForm";
 import Header from "../component/Header"; // Optional Header for consistent branding
-import { Footer } from "../component/footer"; // Use named import for Footer
 import "../../styles/signupPage.css"; // Add specific styling for the page
 
 const SignUp = () => {
   return (
-    <div className="sign-up-page">
+    <div className="sign-up-page pb-4">
       <Header />
 
       {/* Intro Section */}
@@ -33,7 +32,6 @@ const SignUp = () => {
         <SignUpForm />
       </section>
 
-      <Footer />
     </div>
   );
 };
