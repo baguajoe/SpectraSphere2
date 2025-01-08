@@ -176,34 +176,46 @@ Partnership Application Details:
         logging.error(f"Error sending partnership email: {str(e)}")
         return jsonify({"success": False, "message": "Internal server error"}), 500
 
-@api.route("/signup", methods=["POST"])
-def handle_signup():
+@api.route("/personalization-data", methods=["POST"])
+def handle_personalization():
     data = request.json
-    email = data.get("email")
     
-    # Validate email
-    if not email or not re.match(r"[^@]+@[^@]+\.[^@]+", email):
-        return jsonify({"success": False, "message": "Valid email is required"}), 400
-
-    # Format email content
+    # Format email content with all the personalization fields
     email_content = f"""
-New User Sign-up Details:
+Personalization Data Form Submission:
 
-1. Contact Information:
-   - Email: {escape(email)}
-
-2. Cannabis Preferences:
+1. Basic Preferences:
    - Favorite Strain: {escape(data.get('favoriteStrain', 'Not specified'))}
    - Category Preference: {escape(data.get('category', 'Not specified'))}
-   - Preferred Potency: {escape(data.get('potencyPreference', 'Not specified'))}
-   - Preferred Consumption Method: {escape(data.get('consumptionMethod', 'Not specified'))}
-   - Favorite Flavor/Aroma: {escape(data.get('flavor', 'Not specified'))}
+   - Potency Preference: {escape(data.get('potencyPreference', 'Not specified'))}
+   - Consumption Method: {escape(data.get('consumptionMethod', 'Not specified'))}
+   - Flavor/Aroma: {escape(data.get('flavor', 'Not specified'))}
 
-3. Desired Effects:
-   {escape(', '.join(data.get('effects', ['None specified'])))}
+2. Usage Patterns:
+   - Preferred Time: {escape(data.get('preferredTime', 'Not specified'))}
+   - Experience Level: {escape(data.get('experienceLevel', 'Not specified'))}
+   - Social Setting: {escape(data.get('socialSetting', 'Not specified'))}
+   - Frequency: {escape(data.get('frequency', 'Not specified'))}
+   - Activity Preference: {escape(data.get('activityPreference', 'Not specified'))}
 
-4. Additional Comments:
-   {escape(data.get('comments', 'No additional comments'))}
+3. Health & Wellness:
+   - Health Conditions: {escape(data.get('healthConditions', 'Not specified'))}
+   - Desired Effects: {escape(', '.join(data.get('effects', ['None specified'])))}
+   - Energy Level Preference: {escape(data.get('energyLevel', 'Not specified'))}
+   - Mood Preference: {escape(data.get('moodPreference', 'Not specified'))}
+   - Goals: {escape(data.get('goals', 'Not specified'))}
+   - Allergies: {escape(data.get('allergies', 'Not specified'))}
+
+4. Product Preferences:
+   - Product Types: {escape(', '.join(data.get('productTypes', ['None specified'])))}
+   - Price Range: {escape(data.get('priceRange', 'Not specified'))}
+   - Storage Preference: {escape(data.get('storagePreference', 'Not specified'))}
+   - Package Type: {escape(data.get('packageType', 'Not specified'))}
+   - Taste Sensitivity: {escape(data.get('tasteSensitivity', 'Not specified'))}
+   - Preferred Vendors: {escape(data.get('preferredVendors', 'Not specified'))}
+
+5. Additional Information:
+   - Comments: {escape(data.get('additionalComments', 'No additional comments'))}
 """
 
     # Get admin email
@@ -214,13 +226,62 @@ New User Sign-up Details:
 
     # Send email
     try:
-        send_email(admin_email, email_content, "Personalization Data Form")
-        logging.info(f"Sign-up received from: {email}")
+        send_email(admin_email, email_content, "New Personalization Data Submission")
+        logging.info("Personalization data form submitted successfully")
         return jsonify({
             "success": True,
-            "message": "Thank you for signing up!",
-            "details": "We've received your preferences and will keep you updated on our latest developments."
+            "message": "Thank you for sharing your preferences!",
+            "details": "We've received your information and will use it to enhance your experience."
         }), 200
     except Exception as e:
-        logging.error(f"Error sending signup email: {str(e)}")
+        logging.error(f"Error sending personalization data email: {str(e)}")
         return jsonify({"success": False, "message": "Internal server error"}), 500
+
+# @api.route("/signup", methods=["POST"])
+# def handle_signup():
+#     data = request.json
+#     email = data.get("email")
+    
+#     # Validate email
+#     if not email or not re.match(r"[^@]+@[^@]+\.[^@]+", email):
+#         return jsonify({"success": False, "message": "Valid email is required"}), 400
+
+#     # Format email content
+#     email_content = f"""
+# New User Sign-up Details:
+
+# 1. Contact Information:
+#    - Email: {escape(email)}
+
+# 2. Cannabis Preferences:
+#    - Favorite Strain: {escape(data.get('favoriteStrain', 'Not specified'))}
+#    - Category Preference: {escape(data.get('category', 'Not specified'))}
+#    - Preferred Potency: {escape(data.get('potencyPreference', 'Not specified'))}
+#    - Preferred Consumption Method: {escape(data.get('consumptionMethod', 'Not specified'))}
+#    - Favorite Flavor/Aroma: {escape(data.get('flavor', 'Not specified'))}
+
+# 3. Desired Effects:
+#    {escape(', '.join(data.get('effects', ['None specified'])))}
+
+# 4. Additional Comments:
+#    {escape(data.get('comments', 'No additional comments'))}
+# """
+
+#     # Get admin email
+#     admin_email = os.getenv("GMAIL")
+#     if not admin_email:
+#         logging.error("Admin email not configured")
+#         return jsonify({"success": False, "message": "Server configuration error"}), 500
+
+#     # Send email
+#     try:
+#         send_email(admin_email, email_content, "Personalization Data Form")
+#         logging.info(f"Sign-up received from: {email}")
+#         return jsonify({
+#             "success": True,
+#             "message": "Thank you for signing up!",
+#             "details": "We've received your preferences and will keep you updated on our latest developments."
+#         }), 200
+#     except Exception as e:
+#         logging.error(f"Error sending signup email: {str(e)}")
+#         return jsonify({"success": False, "message": "Internal server error"}), 500

@@ -15,11 +15,11 @@ const GetInTouch = () => {
 
   const handleChange = (e) => {
     const { type, name, value, checked } = e.target;
-    
+
     if (type === "checkbox") {
       setFormData(prev => ({
         ...prev,
-        interests: checked 
+        interests: checked
           ? [...prev.interests, value]
           : prev.interests.filter(interest => interest !== value)
       }));
@@ -116,7 +116,7 @@ const GetInTouch = () => {
             value={formData.message}
             onChange={handleChange}
           ></textarea>
-          <label>Areas of Interest:</label>
+          <label><b>Areas of Interest:</b></label>
           <div className="checkbox-group">
             <label>
               <input

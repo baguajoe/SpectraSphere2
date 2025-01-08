@@ -105,7 +105,7 @@ const PartnershipForm = () => {
           {status.message}
         </div>
       )}
-      
+
       <label htmlFor="email">1. Email Address:</label>
       <input
         type="email"
@@ -152,6 +152,35 @@ const PartnershipForm = () => {
       />
 
       <label>5. Partnership Goals (Select all that apply):</label>
+      <div className="checkbox-group">
+        <div className="checkbox-column">
+          {partnershipGoals.slice(0, Math.ceil(partnershipGoals.length / 2)).map((goal) => (
+            <label key={goal}>
+              <input
+                type="checkbox"
+                value={goal}
+                checked={formData.goals.includes(goal)}
+                onChange={handleGoalsChange}
+              />
+              {goal}
+            </label>
+          ))}
+        </div>
+        <div className="checkbox-column">
+          {partnershipGoals.slice(Math.ceil(partnershipGoals.length / 2)).map((goal) => (
+            <label key={goal}>
+              <input
+                type="checkbox"
+                value={goal}
+                checked={formData.goals.includes(goal)}
+                onChange={handleGoalsChange}
+              />
+              {goal}
+            </label>
+          ))}
+        </div>
+      </div>
+      {/* <label>5. Partnership Goals (Select all that apply):</label>
       <div className="checkbox-group" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '10px' }}>
         {partnershipGoals.map((goal) => (
           <label key={goal}>
@@ -164,7 +193,7 @@ const PartnershipForm = () => {
             {goal}
           </label>
         ))}
-      </div>
+      </div> */}
 
       <label htmlFor="currentTools">6. Current Tools or Platforms:</label>
       <textarea

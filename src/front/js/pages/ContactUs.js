@@ -61,7 +61,7 @@ const ContactUs = () => {
   };
 
   return (
-    <div className="contact-page">
+    <div className="contact-page h-100">
       <section className="contact-form-section">
         <form className="contact-form" onSubmit={handleSubmit}>
           <h2>Get Involved with SpectraSphere</h2>

@@ -7,12 +7,13 @@ import GetInTouch from "../component/GetInTouch";
 import "../../styles/landingPage.css";
 import "../../styles/aboutSpectraSphere.css";
 import leaf from "../../img/leaf.jpg";
+import phoneImg from "../../img/phoneImg.png";
 
 const LandingPage = () => {
   const navigate = useNavigate(); // Initialize navigation
 
   const handleSignUpClick = () => {
-    navigate("/sign-up"); // Navigate to the Sign-Up page
+    navigate("/personalization-data"); // Navigate to the Sign-Up page
   };
 
   const handlePartnershipClick = () => {
@@ -24,7 +25,7 @@ const LandingPage = () => {
       <Header />
 
       {/* Main banner section */}
-      <section className="main-banner">
+      <section className="main-banner pt-1">
         <div className="banner-text">
           <h1>From Seed to Sale, DispenseMaster Manages It All.</h1>
           <p>
@@ -38,8 +39,10 @@ const LandingPage = () => {
         </div>
         <div className="phone-image">
           <img
-            src="https://via.placeholder.com/250x500"
+            // src="https://via.placeholder.com/250x500"
+            src={phoneImg}
             alt="DispenseMaster App Preview"
+            style={{ height: "500px" }}
           />
         </div>
       </section>
@@ -50,7 +53,9 @@ const LandingPage = () => {
 
       {/* How Your Input Helps section */}
       <section className="community-involvement">
+        <h1 className="text-white">Personalization Data Form</h1>
         <h2>How Your Input Helps</h2>
+        <p className="text-white">This form is anonymous...</p>
         <div className="card-container">
           <div className="card">
             <h3>Your Impact on AI</h3>
@@ -69,10 +74,10 @@ const LandingPage = () => {
               <li>Improve cannabis tools for everyone in the industry.</li>
             </ul>
             <p>
-              Together, we can shape the future of cannabis technology. Fill out the form and be part of the journey!
+              Together, we can shape the future of cannabis technology. Fill out the Personalization Data Form and be part of the journey!
             </p>
             <button className="primary-btn" onClick={handleSignUpClick}>
-              Sign Up
+              Personalization Data
             </button>
           </div>
         </div>
@@ -81,6 +86,8 @@ const LandingPage = () => {
 
       {/* Partnership Section */}
       <section className="partner-with-us">
+        <h1 className="text-white">Dispensaries, Grow Farms and Seedbanks</h1>
+
         <h2>Partner with Us</h2>
         <div className="card-container">
           <div className="card">
@@ -119,8 +126,8 @@ const LandingPage = () => {
           {/* <div className="placeholder-image">
               <img src={leaf} alt="LeafBridgeConnect Preview" />
             </div> */}
-          <div className="leafbridgeconnect-features">
-            
+          <div className="leafbridgeconnect-features mt-5">
+
             <div className="feature">
               <h3>Strain Recognition</h3>
               <p>
@@ -141,14 +148,13 @@ const LandingPage = () => {
             </div>
           </div>
         </div>
-        <div className="cta-buttons">
+        {/* <div className="cta-buttons">
           <button className="primary-btn" onClick={handleSignUpClick}>
             Sign Up for Updates
           </button>
-        </div>
+        </div> */}
 
       </section>
-
 
 
 

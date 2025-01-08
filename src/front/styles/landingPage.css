@@ -101,6 +101,8 @@ h1, h2, h3 {
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 30px;
   margin-top: 20px;
+  padding-left: 10%;
+  padding-right: 10%;
 }
 
 .feature {
@@ -186,11 +188,11 @@ h1, h2, h3 {
   color: #c1ffc9;
 }
 
-.leafbridgeconnect-section .cta-buttons {
+.leafbridgeconnect-section .cta-buttons, .main-banner .cta-buttons {
   margin-top: 20px;
 }
 
-.leafbridgeconnect-section .cta-buttons button {
+.leafbridgeconnect-section .cta-buttons button, .main-banner .cta-buttons button {
   padding: 10px 20px;
   border-radius: 30px;
   border: none;
@@ -199,13 +201,13 @@ h1, h2, h3 {
   margin: 0 10px;
 }
 
-.leafbridgeconnect-section .primary-btn {
+.leafbridgeconnect-section .primary-btn, .main-banner .primary-btn {
   background-color: #27ae60;
   color: white;
   border: none;
 }
 
-.leafbridgeconnect-section .primary-btn:hover {
+.leafbridgeconnect-section .primary-btn:hover, .main-banner .primary-btn:hover {
   background-color: #218c54;
 }
 
@@ -218,7 +220,63 @@ h1, h2, h3 {
   box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
 }
 
- 
+.personalization-data-form {
+  background-color: #001f3f; /* Dark blue background */
+  color: #f9f9f9; /* Light text for contrast */
+  padding: 60px 20px;
+  text-align: center;
+  border-radius: 10px;
+  margin: 40px 0; /* Space between other sections */
+}
+
+.personalization-data-form .cta-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.personalization-data-form h2 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+  color: #27ae60; /* Green accent */
+}
+
+.personalization-data-form p {
+  font-size: 1.2em;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.personalization-data-form ul {
+  list-style-type: disc;
+  padding-left: 20px;
+  text-align: left;
+  margin: 20px auto;
+  max-width: 600px;
+  color: #c1ffc9; /* Soft green for list items */
+}
+
+.personalization-data-form ul li {
+  margin-bottom: 10px;
+  font-size: 1em;
+}
+
+.personalization-data-form .primary-btn {
+  background-color: #27ae60;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 30px;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  margin-top: 20px;
+}
+
+.personalization-data-form .primary-btn:hover {
+  background-color: #218c54; /* Darker green */
+  transform: translateY(-2px);
+}
+
 
 /* Get In Touch Section */
 .get-in-touch {
@@ -354,6 +412,8 @@ blockquote {
 
   .features-grid {
     grid-template-columns: 1fr;
+    padding-left: 10%;
+    padding-right: 10%;
   }
 
   .leafbridgeconnect-features {
@@ -393,7 +453,7 @@ blockquote {
 /* Individual Card Styles */
 .card {
   background-color: #013a63; /* Slightly lighter blue */
-  color: #f9f9f9; /* Light text for readability */
+  color: #ecd7d7; /* Light text for readability */
   border-radius: 10px;
   padding: 20px;
   box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);

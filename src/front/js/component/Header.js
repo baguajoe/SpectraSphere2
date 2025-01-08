@@ -10,7 +10,7 @@ const Header = () => {
           Unite your cannabis operations under one intuitive platform.
         </p>
         <div className="cta-buttons">
-          <Link to="/sign-up">
+          <Link to="/partnership">
             <button className="btn-primary">Sign Up For Updates</button>
           </Link>
           {/* <button className="btn-secondary">Learn More</button> */}

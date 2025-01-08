@@ -13,7 +13,8 @@ import LandingPage from "./pages/LandingPage";
 import AboutUs from "./pages/AboutUs"; // Import AboutPage
 import ContactUs from "./pages/ContactUs"; // Import AboutPage
 import PartnershipPage from "./pages/PartnershipPage"; // Import the page
-import SignUp from "./pages/SignUp"; // Import SignUp component
+import PersonalizationData from "./pages/PersonalizationData";
+
 // import NotFound from "./pages/NotFound"; // Optional: Import a NotFound component for invalid routes
 
 //create your first component
@@ -23,7 +24,7 @@ const Layout = () => {
     if (!process.env.BACKEND_URL || process.env.BACKEND_URL == "") return <BackendURL />;
 
     return (
-        <div>
+        // <div>
             <BrowserRouter basename={basename}>
                 <ScrollToTop>
                     <Navbar />
@@ -31,7 +32,7 @@ const Layout = () => {
                         <Route element={<LandingPage />} path="/" /> {/* Set LandingPage as the default */}
                         <Route path="/about-us" element={<AboutUs />} /> {/* About Us Page */}
                         <Route path="/partnership" element={<PartnershipPage />} />; // Add route
-                        <Route path="/sign-up" element={<SignUp />} />
+                        <Route path="/personalization-data" element={<PersonalizationData />} />
                         <Route path="/contact-us" element={<ContactUs/>} />
                         <Route element={<Home />} path="/home" /> {/* Move Home to its own path */}
                         <Route element={<LandingPage />} path="/landing-page" />
@@ -46,7 +47,7 @@ const Layout = () => {
                     </Routes>
                 </ScrollToTop>
             </BrowserRouter>
-        </div>
+        // </div>
     );
 };
 

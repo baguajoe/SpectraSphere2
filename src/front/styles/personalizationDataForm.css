@@ -1,6 +1,6 @@
-/* Partnership Form Container */
-.partnership-form {
-    max-width: 600px;
+/* Personalization Form Container */
+.personalization-form {
+    max-width: 700px;
     margin: 0 auto;
     background-color: #001f3f; /* Dark blue background */
     color: #f9f9f9; /* Light text for readability */
@@ -8,16 +8,19 @@
     border-radius: 10px;
     box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
     text-align: left;
+    font-family: 'Roboto', sans-serif;
   }
   
-  .partnership-form h2 {
+  /* Form Heading */
+  .personalization-form h2 {
     font-size: 2em;
     color: #27ae60; /* Green heading */
     margin-bottom: 20px;
     text-align: center;
   }
   
-  .partnership-form p {
+  /* Form Description */
+  .personalization-form p {
     font-size: 1.2em;
     line-height: 1.6;
     margin-bottom: 20px;
@@ -26,9 +29,9 @@
   }
   
   /* Input and Select Fields */
-  .partnership-form input,
-  .partnership-form select,
-  .partnership-form textarea {
+  .personalization-form input,
+  .personalization-form select,
+  .personalization-form textarea {
     width: 100%;
     padding: 10px;
     margin-bottom: 20px;
@@ -41,14 +44,14 @@
     transition: border-color 0.3s ease;
   }
   
-  .partnership-form input:focus,
-  .partnership-form select:focus,
-  .partnership-form textarea:focus {
+  .personalization-form input:focus,
+  .personalization-form select:focus,
+  .personalization-form textarea:focus {
     border-color: #27ae60; /* Green border on focus */
   }
   
   /* Labels */
-  .partnership-form label {
+  .personalization-form label {
     font-size: 1em;
     font-weight: bold;
     color: #f9f9f9;
@@ -57,53 +60,26 @@
   }
   
   /* Checkbox and Radio Options */
-  .partnership-form .checkbox-group {
-    display: flex;
-    justify-content: space-between;
-    gap: 20px;
-    margin-bottom: 20px;
-  }
-  
-  .partnership-form .checkbox-column {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-  }
-  
-  .partnership-form .checkbox-group label {
-    font-size: 0.9em;
-    color: #c1ffc9;
-    display: flex;
-    align-items: flex-start;
-    gap: 10px;
-    margin: 0;
-  }
-  
-  .partnership-form .checkbox-group input[type="checkbox"] {
-    margin: 0;
-    width: auto;
-  }
-  /* .partnership-form .checkbox-group {
+  .personalization-form .checkboxes {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
     margin-bottom: 20px;
   }
   
-  .partnership-form .checkbox-group label {
+  .personalization-form .checkboxes label {
     font-size: 0.9em;
     color: #c1ffc9;
     display: flex;
     align-items: center;
   }
   
-  .partnership-form .checkbox-group input {
+  .personalization-form .checkboxes input {
     margin-right: 10px;
-  } */
+  }
   
   /* Submit Button */
-  .partnership-form .primary-btn {
+  .personalization-form .primary-btn {
     background-color: #27ae60; /* Green button */
     color: white;
     padding: 10px 20px;
@@ -116,22 +92,39 @@
     width: 100%; /* Full width for balance */
   }
   
-  .partnership-form .primary-btn:hover {
+  .personalization-form .primary-btn:hover {
     background-color: #218c54; /* Darker green on hover */
     transform: translateY(-2px); /* Slight lift effect */
   }
   
+  /* Alert Messages */
+  .personalization-form .alert {
+    margin-bottom: 20px;
+    padding: 10px;
+    border-radius: 5px;
+  }
+  
+  .personalization-form .alert-success {
+    background-color: #d4edda;
+    color: #155724;
+  }
+  
+  .personalization-form .alert-error {
+    background-color: #f8d7da;
+    color: #721c24;
+  }
+  
   /* Responsive Design */
   @media (max-width: 768px) {
-    .partnership-form {
+    .personalization-form {
       padding: 30px 15px;
     }
   
-    .partnership-form h2 {
+    .personalization-form h2 {
       font-size: 1.8em;
     }
   
-    .partnership-form p {
+    .personalization-form p {
       font-size: 1em;
     }
   }
