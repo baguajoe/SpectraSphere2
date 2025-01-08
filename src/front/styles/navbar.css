@@ -1,0 +1,35 @@
+.nav-link.active {
+  font-weight: 500;
+  color: #000 !important;
+}
+
+.nav-link {
+  transition: all 0.1s ease-in-out;
+  padding: 0;
+}
+
+.navbar-brand {
+  padding: 0;
+}
+.navbar-brand img.logo {
+  height: 60px;
+  width: auto;
+}
+
+/* Add these styles for better mobile responsiveness */
+@media (max-width: 991px) {
+  .navbar-collapse {
+      background-color: #f8f9fa;
+      padding: 1rem;
+      margin-top: 0.5rem;
+      border-radius: 0.25rem;
+  }
+
+  .navbar-nav {
+      text-align: center;
+  }
+
+  .nav-item {
+      padding: 0.5rem 0;
+  }
+}

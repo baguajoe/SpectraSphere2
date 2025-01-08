@@ -114,12 +114,12 @@ def contactUs():
     # Send email
     try:
         email_value = f"From: {escape(email)}\n\nComment:\n{escape(comment)}"
-        send_email(admin_email, email_value, "Comment from the user")
+        send_email(admin_email, email_value, "New Contact Form")
         logging.info(f"Comment received from: {email}")
         return jsonify({
             "success": True,
-            "message": "Thank you for your comment.",
-            "details": "Your feedback has been sent to our team. We will get back to you within 24-48 hours."
+            "message": "Thank you for your message! We'll get back to you soon.",
+            "details": "Your feedback has been sent to our team. We will get back to you as soon as we can."
         }), 200
     except Exception as e:
         logging.error(f"Error sending email: {str(e)}")

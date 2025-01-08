@@ -1,66 +1,84 @@
-import React from "react";
-import { Link, useNavigate } from "react-router-dom";
+import React, { useState } from "react";
+import { NavLink, useNavigate } from "react-router-dom";
+import "../../styles/navbar.css";
+import logo from "../../img/SpectraLogo.png";
 
 export const Navbar = () => {
   const navigate = useNavigate();
+  const [isOpen, setIsOpen] = useState(false);
 
-  // Button handler to redirect to a specific page
-  const handleButtonClick = () => {
-    navigate("/early-access"); // Redirects to the Early Access page
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
   };
 
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
       <div className="container">
-        <Link to="/" className="navbar-brand">
-          SpectraSphere
-        </Link>
+        <NavLink to="/" className="navbar-brand">
+          <img src={logo} alt="SpectraSphere" className="logo" />
+        </NavLink>
+
+        {/* Toggle button */}
         <button
           className="navbar-toggler"
           type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNav"
+          onClick={toggleMenu}
           aria-controls="navbarNav"
-          aria-expanded="false"
+          aria-expanded={isOpen}
           aria-label="Toggle navigation"
         >
           <span className="navbar-toggler-icon"></span>
         </button>
-        <div className="collapse navbar-collapse" id="navbarNav">
+
+        {/* Navigation links */}
+        <div className={`collapse navbar-collapse ${isOpen ? 'show' : ''}`} id="navbarNav">
           <ul className="navbar-nav ms-auto">
             <li className="nav-item">
-              <Link to="/" className="nav-link">
+              <NavLink
+                to="/"
+                className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}
+                onClick={() => setIsOpen(false)}
+              >
                 Home
-              </Link>
+              </NavLink>
             </li>
             <li className="nav-item">
-              <Link to="/about-us" className="nav-link">
+              <NavLink
+                to="/about-us"
+                className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}
+                onClick={() => setIsOpen(false)}
+              >
                 About Us
-              </Link>
+              </NavLink>
             </li>
-            
             <li className="nav-item">
-              <Link to="/partnership" className="nav-link">
+              <NavLink
+                to="/partnership"
+                className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}
+                onClick={() => setIsOpen(false)}
+              >
                 Partnership
-              </Link>
+              </NavLink>
             </li>
             <li className="nav-item">
-              <Link to="/personalization-data" className="nav-link">
+              <NavLink
+                to="/personalization-data"
+                className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}
+                onClick={() => setIsOpen(false)}
+              >
                 Personalization Data
-              </Link>
+              </NavLink>
             </li>
             <li className="nav-item">
-              <Link to="/contact-us" className="nav-link">
+              <NavLink
+                to="/contact-us"
+                className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}
+                onClick={() => setIsOpen(false)}
+              >
                 Contact Us
-              </Link>
+              </NavLink>
             </li>
           </ul>
-          {/* <button
-            className="btn btn-primary ms-3"
-            onClick={handleButtonClick}
-          >
-            Sign Up for Early Access
-          </button> */}
         </div>
       </div>
     </nav>

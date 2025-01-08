@@ -1,5 +1,5 @@
 import React from "react";
-import { useNavigate } from "react-router-dom"; // Import navigation hook
+import { useNavigate } from "react-router-dom";
 import Header from "../component/Header";
 import Features from "../component/Features";
 import GetInTouch from "../component/GetInTouch";
@@ -10,7 +10,11 @@ import leaf from "../../img/leaf.jpg";
 import phoneImg from "../../img/phoneImg.png";
 
 const LandingPage = () => {
-  const navigate = useNavigate(); // Initialize navigation
+  const navigate = useNavigate();
+
+  const handleLearnMoreClick = () => {
+    navigate("/about-us"); // Navigate to the Sign-Up page
+  };
 
   const handleSignUpClick = () => {
     navigate("/personalization-data"); // Navigate to the Sign-Up page
@@ -31,9 +35,9 @@ const LandingPage = () => {
           <p>
             DispenseMaster by <strong>SpectraSphere</strong> streamlines cannabis operations with advanced tools for compliance, inventory management, CRM, and networking—empowering your business to thrive in a competitive market.
           </p>
-          <div className="cta-buttons">
-            <button className="primary-btn" onClick={handleSignUpClick}>
-              Contact Us for Updates
+          <div className="cta-buttons mb-3">
+            <button className="primary-btn" onClick={handleLearnMoreClick}>
+              Click to Learn More
             </button>
           </div>
         </div>
@@ -55,7 +59,12 @@ const LandingPage = () => {
       <section className="community-involvement">
         <h1 className="text-white">Personalization Data Form</h1>
         <h2>How Your Input Helps</h2>
-        <p className="text-white">This form is anonymous...</p>
+        {/* <p className="text-white">This form is anonymous...</p> */}
+        <p className="text-white" style={{ paddingLeft: "5%", paddingRight: "5%" }}>
+          This form is anonymous and helps us develop AI-driven solutions that enhance the cannabis industry.
+          Your insights will contribute to creating more personalized experiences, improving product recommendations,
+          and advancing our understanding of consumer preferences—all while maintaining your privacy.
+        </p>
         <div className="card-container">
           <div className="card">
             <h3>Your Impact on AI</h3>
@@ -148,14 +157,8 @@ const LandingPage = () => {
             </div>
           </div>
         </div>
-        {/* <div className="cta-buttons">
-          <button className="primary-btn" onClick={handleSignUpClick}>
-            Sign Up for Updates
-          </button>
-        </div> */}
 
       </section>
-
 
 
       {/* GetInTouch section */}

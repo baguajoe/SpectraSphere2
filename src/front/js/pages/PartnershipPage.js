@@ -8,11 +8,11 @@ const PartnershipPage = () => {
       <section className="partnership-intro">
         <h1>Partner with Us</h1>
         <p>
-          Join forces with <strong>SpectraSphere</strong> to revolutionize the cannabis industry. 
+          Join forces with <strong>SpectraSphere</strong> to revolutionize the cannabis industry.
           Whether you’re a dispensary owner, grow farm operator, or seedbank owner, our platforms are tailored to help you thrive in this competitive market.
         </p>
         <h2>Why Partner with Us?</h2>
-        <ul>
+        <ul className="px-5">
           <li>Access to real-time price comparison and deals.</li>
           <li>Enhanced customer reach through AI-powered Weed Strain Recognizer.</li>
           <li>Opportunities to educate and recruit through LeafBridgeConnect.</li>

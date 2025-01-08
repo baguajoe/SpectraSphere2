@@ -1,6 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
+import { Context } from "../store/appContext";
 
 const GetInTouch = () => {
+  const { actions } = useContext(Context);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -35,7 +37,6 @@ const GetInTouch = () => {
     e.preventDefault();
     setStatus({ message: "", isError: false });
 
-    // Validate form
     if (!formData.name || !formData.email) {
       setStatus({
         message: "Please fill in all required fields",
@@ -44,37 +45,16 @@ const GetInTouch = () => {
       return;
     }
 
-    try {
-      const response = await fetch(process.env.BACKEND_URL + "/api/contact-us", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          email: formData.email,
-          comment: `Name: ${formData.name}\n\nMessage: ${formData.message}\n\nAreas of Interest:\n${formData.interests.join("\n")}`
-        })
-      });
+    const result = await actions.submitContactForm(formData);
 
-      const data = await response.json();
-
-      if (!response.ok) {
-        throw new Error(data.message || "Failed to send message");
-      }
-
-      // Clear form on success
+    if (result.success) {
       setFormData({ name: "", email: "", message: "", interests: [] });
-      setStatus({
-        message: "Thank you for your message! We'll get back to you soon.",
-        isError: false
-      });
-
-    } catch (error) {
-      setStatus({
-        message: error.message || "Something went wrong. Please try again.",
-        isError: true
-      });
     }
+
+    setStatus({
+      message: result.message,
+      isError: !result.success
+    });
   };
 
   return (

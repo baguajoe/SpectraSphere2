@@ -2,51 +2,47 @@ const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
 			message: null,
-			demo: [
-				{
-					title: "FIRST",
-					background: "white",
-					initial: "white"
-				},
-				{
-					title: "SECOND",
-					background: "white",
-					initial: "white"
-				}
-			]
+
 		},
 		actions: {
-			// Use getActions to call a function within a fuction
-			exampleFunction: () => {
-				getActions().changeColor(0, "green");
-			},
 
 			getMessage: async () => {
-				try{
+				try {
 					// fetching data from the backend
 					const resp = await fetch(process.env.BACKEND_URL + "/api/hello")
 					const data = await resp.json()
 					setStore({ message: data.message })
 					// don't forget to return something, that is how the async resolves
 					return data;
-				}catch(error){
+				} catch (error) {
 					console.log("Error loading message from backend", error)
 				}
 			},
-			changeColor: (index, color) => {
-				//get the store
-				const store = getStore();
+			submitContactForm: async (formData) => {
+				try {
+					const response = await fetch(process.env.BACKEND_URL + "/api/contact-us", {
+						method: "POST",
+						headers: {
+							"Content-Type": "application/json",
+						},
+						body: JSON.stringify({
+							email: formData.email,
+							comment: `Name: ${formData.name}\n\nMessage: ${formData.message || formData.comment}\n\nAreas of Interest:\n${formData.interests ? formData.interests.join("\n") : ""}`
+						})
+					});
 
-				//we have to loop the entire demo array to look for the respective index
-				//and change its color
-				const demo = store.demo.map((elm, i) => {
-					if (i === index) elm.background = color;
-					return elm;
-				});
+					const data = await response.json();
 
-				//reset the global store
-				setStore({ demo: demo });
+					if (!response.ok) {
+						throw new Error(data.message || "Failed to send message");
+					}
+
+					return { success: true, message: data.message || "Thank you for your message! We'll get back to you soon." };
+				} catch (error) {
+					return { success: false, message: error.message || "Something went wrong. Please try again." };
+				}
 			}
+
 		}
 	};
 };
