@@ -1,6 +1,13 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 const Features = ({ features }) => {
+    const navigate = useNavigate();
+
+    const handleFeatureComparisonClick = () => {
+        navigate("/features"); // Navigate to the Feature Comparison page
+    };
+
     const defaultFeatures = [
         {
             title: "AI-Powered DispenseMatch",
@@ -149,8 +156,18 @@ const Features = ({ features }) => {
                     <div key={index} className="feature">
                         <h3>{feature.title}</h3>
                         <div>{feature.description}</div>
+                        {/* Add CTA button */}
+
                     </div>
                 ))}
+            </div>
+            <div className="d-flex justify-content-center">
+                <button
+                    className="cta-buttons mt-4"
+                    onClick={handleFeatureComparisonClick}
+                >
+                    Compare Features
+                </button>
             </div>
         </section>
     );

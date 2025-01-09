@@ -79,9 +79,10 @@ h1, h2, h3 {
   margin: 10px 0;
 }
 
-.phone-image img {
+.dispense-master-image img {
   border-radius: 10px;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  opacity: .9;
 }
 
 /* Features Section */
@@ -188,11 +189,12 @@ h1, h2, h3 {
   color: #c1ffc9;
 }
 
+ /* buttons  */
 .leafbridgeconnect-section .cta-buttons, .main-banner .cta-buttons {
   margin-top: 20px;
 }
 
-.leafbridgeconnect-section .cta-buttons button, .main-banner .cta-buttons button {
+.leafbridgeconnect-section .cta-buttons button, .main-banner .cta-buttons button, .features .cta-buttons {
   padding: 10px 20px;
   border-radius: 30px;
   border: none;
@@ -201,13 +203,13 @@ h1, h2, h3 {
   margin: 0 10px;
 }
 
-.leafbridgeconnect-section .primary-btn, .main-banner .primary-btn {
+.leafbridgeconnect-section .primary-btn, .main-banner .primary-btn, .features .cta-buttons {
   background-color: #27ae60;
   color: white;
   border: none;
 }
 
-.leafbridgeconnect-section .primary-btn:hover, .main-banner .primary-btn:hover {
+.leafbridgeconnect-section .primary-btn:hover, .main-banner .primary-btn:hover, .features .cta-buttons:hover {
   background-color: #218c54;
 }
 
@@ -523,3 +525,4 @@ blockquote {
     font-size: 2em;
   }
 }
+

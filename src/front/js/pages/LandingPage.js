@@ -8,6 +8,9 @@ import "../../styles/landingPage.css";
 import "../../styles/aboutSpectraSphere.css";
 import leaf from "../../img/leaf.jpg";
 import phoneImg from "../../img/phoneImg.png";
+import LBCImg from "../../img/LBC.jpg";
+import dispenseMasterImg from "../../img/DispenseMaster.png";
+
 
 const LandingPage = () => {
   const navigate = useNavigate();
@@ -29,24 +32,36 @@ const LandingPage = () => {
       <Header />
 
       {/* Main banner section */}
-      <section className="main-banner pt-1">
+      <section className="main-banner">
         <div className="banner-text">
           <h1>From Seed to Sale, DispenseMaster Manages It All.</h1>
           <p>
-            DispenseMaster by <strong>SpectraSphere</strong> streamlines cannabis operations with advanced tools for compliance, inventory management, CRM, and networking—empowering your business to thrive in a competitive market.
+            DispenseMaster by <strong>SpectraSphere Solutions</strong> streamlines cannabis operations with advanced tools for compliance, inventory management, CRM, and networking—empowering your business to thrive in a competitive market.
           </p>
+          <img
+            src={dispenseMasterImg}
+            alt="DispenseMaster"
+            style={{ width: '75%' }}
+          />
           <div className="cta-buttons mb-3">
             <button className="primary-btn" onClick={handleLearnMoreClick}>
               Click to Learn More
             </button>
           </div>
         </div>
-        <div className="phone-image">
-          <img
+        <div className="dispense-master-image">
+          {/* <img
             // src="https://via.placeholder.com/250x500"
             src={phoneImg}
             alt="DispenseMaster App Preview"
             style={{ height: "500px" }}
+          /> */}
+
+
+          <img
+            src={LBCImg}
+            alt="DispenseMaster"
+            style={{ height: '250px', marginLeft: '15px', marginRight: '15px' }}
           />
         </div>
       </section>
@@ -131,38 +146,38 @@ const LandingPage = () => {
           With LeafBridgeConnect, you'll not only stay connected but also gain the knowledge and tools to thrive in a competitive market.
         </p>
 
-        <div class="d-flex">
-          {/* <div className="placeholder-image">
+        {/* <div class="d-flex"> */}
+        {/* <div className="placeholder-image">
               <img src={leaf} alt="LeafBridgeConnect Preview" />
             </div> */}
-          <div className="leafbridgeconnect-features mt-5">
+        <div className="leafbridgeconnect-features mt-5">
 
-            <div className="feature">
-              <h3>Strain Recognition</h3>
-              <p>
-                Use cutting-edge image AI technology to identify cannabis strains with ease. Snap a picture and get detailed strain information instantly.
-              </p>
-            </div>
-            <div className="feature">
-              <h3>Professional Networking</h3>
-              <p>
-                Connect with dispensaries, growers, and industry professionals through our exclusive cannabis community.
-              </p>
-            </div>
-            <div className="feature">
-              <h3>Job Listings and Openings</h3>
-              <p>
-                Post job openings or search for exciting career opportunities in the cannabis industry. Find the perfect talent or role to grow your business or career.
-              </p>
-            </div>
+          <div className="feature">
+            <h3>Strain Recognition</h3>
+            <p>
+              Use cutting-edge image AI technology to identify cannabis strains with ease. Snap a picture and get detailed strain information instantly.
+            </p>
+          </div>
+          <div className="feature">
+            <h3>Professional Networking</h3>
+            <p>
+              Connect with dispensaries, growers, and industry professionals through our exclusive cannabis community.
+            </p>
+          </div>
+          <div className="feature">
+            <h3>Job Listings and Openings</h3>
+            <p>
+              Post job openings or search for exciting career opportunities in the cannabis industry. Find the perfect talent or role to grow your business or career.
+            </p>
           </div>
         </div>
+        {/* </div> */}
 
-      </section>
+      </section >
 
 
       {/* GetInTouch section */}
-      <GetInTouch />
+      < GetInTouch />
 
       {/* Footer Section */}
       {/* <Footer>
@@ -170,7 +185,7 @@ const LandingPage = () => {
           DispenseMaster and LeafBridgeConnect are powered by <strong>your input</strong>. Together, we’re building smarter AI for the future of cannabis.
         </p>
       </Footer> */}
-    </div>
+    </div >
   );
 };
 

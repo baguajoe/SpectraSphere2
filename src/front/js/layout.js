@@ -14,6 +14,7 @@ import AboutUs from "./pages/AboutUs"; // Import AboutPage
 import ContactUs from "./pages/ContactUs"; // Import AboutPage
 import PartnershipPage from "./pages/PartnershipPage"; // Import the page
 import PersonalizationData from "./pages/PersonalizationData";
+import FeatureComparisonPage from "./pages/FeatureComparisonPage";
 
 // import NotFound from "./pages/NotFound"; // Optional: Import a NotFound component for invalid routes
 
@@ -31,6 +32,7 @@ const Layout = () => {
                     <Routes>
                         <Route element={<LandingPage />} path="/" /> {/* Set LandingPage as the default */}
                         <Route path="/about-us" element={<AboutUs />} /> {/* About Us Page */}
+                        <Route path="/features" element={<FeatureComparisonPage />} />
                         <Route path="/partnership" element={<PartnershipPage />} />; // Add route
                         <Route path="/personalization-data" element={<PersonalizationData />} />
                         <Route path="/contact-us" element={<ContactUs/>} />
