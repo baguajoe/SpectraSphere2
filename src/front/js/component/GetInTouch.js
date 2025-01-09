@@ -12,7 +12,8 @@ const GetInTouch = () => {
 
   const [status, setStatus] = useState({
     message: "",
-    isError: false
+    isError: false,
+    isSubmitting: false
   });
 
   const handleChange = (e) => {
@@ -35,7 +36,7 @@ const GetInTouch = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setStatus({ message: "", isError: false });
+    setStatus({ message: "", isError: false, isSubmitting: true });
 
     if (!formData.name || !formData.email) {
       setStatus({
@@ -53,7 +54,8 @@ const GetInTouch = () => {
 
     setStatus({
       message: result.message,
-      isError: !result.success
+      isError: !result.success,
+      isSubmitting: false
     });
   };
 
@@ -95,6 +97,7 @@ const GetInTouch = () => {
             rows="4"
             value={formData.message}
             onChange={handleChange}
+            required
           ></textarea>
           <label><b>Areas of Interest:</b></label>
           <div className="checkbox-group">
@@ -149,7 +152,10 @@ const GetInTouch = () => {
               Job Opportunities
             </label>
           </div>
-          <button type="submit">Submit</button>
+          {/* <button type="submit">Submit</button> */}
+          <button type="submit" className="primary-btn" disabled={status.isSubmitting}>
+            {status.isSubmitting ? "Submitting..." : "Submit"}
+          </button>
         </form>
       </div>
     </section>

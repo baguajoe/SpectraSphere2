@@ -150,7 +150,7 @@ const PersonalizationDataForm = () => {
         </div>
       )}
 
-      <label htmlFor="favoriteStrain">1. What is your favorite strain?</label>
+      <label htmlFor="favoriteStrain">1. What is your favorite strain? *</label>
       <input
         type="text"
         id="favoriteStrain"
@@ -159,7 +159,7 @@ const PersonalizationDataForm = () => {
         onChange={handleChange}
       />
 
-      <label htmlFor="category">2. Do you prefer Indica, Sativa, or Hybrid?</label>
+      <label htmlFor="category">2. Do you prefer Indica, Sativa, or Hybrid? *</label>
       <select id="category" name="category" value={formData.category} onChange={handleChange}>
         <option value="">Select</option>
         <option value="Indica">Indica</option>
@@ -167,7 +167,7 @@ const PersonalizationDataForm = () => {
         <option value="Hybrid">Hybrid</option>
       </select>
 
-      <label>3. Desired Effects (Select all that apply):</label>
+      <label>3. Desired Effects (Select all that apply): *</label>
       <div className="checkboxes">
         {effectsOptions.map((effect) => (
           <div key={effect}>
@@ -183,15 +183,6 @@ const PersonalizationDataForm = () => {
         ))}
       </div>
 
-      {/* <label htmlFor="flavor">4. Favorite Flavor/Aroma:</label>
-      <input
-        type="text"
-        id="flavor"
-        name="flavor"
-        value={formData.flavor}
-        onChange={handleChange}
-      />
-       */}
       <label htmlFor="flavor">4. Favorite Flavor/Aroma:</label>
       <select
         id="flavor"
@@ -207,7 +198,7 @@ const PersonalizationDataForm = () => {
         <option value="Spicy">Spicy</option>
       </select>
 
-      <label htmlFor="consumptionMethod">5. Preferred Method of Consumption:</label>
+      <label htmlFor="consumptionMethod">5. Preferred Method of Consumption: *</label>
       <select
         id="consumptionMethod"
         name="consumptionMethod"
@@ -222,7 +213,7 @@ const PersonalizationDataForm = () => {
         ))}
       </select>
 
-      <label htmlFor="potencyPreference">6. Do you prefer THC, CBD, or a mix?</label>
+      <label htmlFor="potencyPreference">6. Do you prefer THC, CBD, or a mix? *</label>
       <select
         id="potencyPreference"
         name="potencyPreference"
@@ -235,7 +226,7 @@ const PersonalizationDataForm = () => {
         <option value="Balanced Mix">Balanced Mix</option>
       </select>
 
-      <label htmlFor="preferredTime">7. Preferred Time of Use:</label>
+      <label htmlFor="preferredTime">7. Preferred Time of Use: *</label>
       <select
         id="preferredTime"
         name="preferredTime"
@@ -273,7 +264,7 @@ const PersonalizationDataForm = () => {
         ))}
       </div>
 
-      <label htmlFor="priceRange">10. What is your preferred price range?</label>
+      <label htmlFor="priceRange">10. What is your preferred price range? *</label>
       <input
         type="text"
         id="priceRange"
@@ -283,7 +274,7 @@ const PersonalizationDataForm = () => {
         onChange={handleChange}
       />
 
-      <label htmlFor="experienceLevel">11. How experienced are you?</label>
+      <label htmlFor="experienceLevel">11. How experienced are you? *</label>
       <select
         id="experienceLevel"
         name="experienceLevel"
@@ -320,7 +311,7 @@ const PersonalizationDataForm = () => {
         <option value="Reduce">Reduce</option>
       </select>
 
-      <label htmlFor="goals">14. What are your goals? (e.g., relaxation, creativity, focus)</label>
+      <label htmlFor="goals">14. What are your goals? (e.g., relaxation, creativity, focus) *</label>
       <input
         type="text"
         id="goals"
@@ -353,7 +344,7 @@ const PersonalizationDataForm = () => {
         <option value="Stabilize">Stabilize</option>
       </select>
 
-      <label htmlFor="frequency">17. How frequently do you consume these products?</label>
+      <label htmlFor="frequency">17. How frequently do you consume these products? *</label>
       <select
         id="frequency"
         name="frequency"
@@ -376,7 +367,7 @@ const PersonalizationDataForm = () => {
         onChange={handleChange}
       />
 
-      <label htmlFor="allergies">19. Do you have any allergies or sensitivities?</label>
+      <label htmlFor="allergies">19. Do you have any allergies or sensitivities? *</label>
       <input
         type="text"
         id="allergies"

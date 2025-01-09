@@ -106,7 +106,7 @@ const PartnershipForm = () => {
         </div>
       )}
 
-      <label htmlFor="email">1. Email Address:</label>
+      <label htmlFor="email">1. Email Address: *</label>
       <input
         type="email"
         id="email"
@@ -116,7 +116,7 @@ const PartnershipForm = () => {
         required
       />
 
-      <label htmlFor="businessName">2. Business Name:</label>
+      <label htmlFor="businessName">2. Business Name: *</label>
       <input
         type="text"
         id="businessName"
@@ -126,7 +126,7 @@ const PartnershipForm = () => {
         required
       />
 
-      <label htmlFor="businessType">3. Business Type:</label>
+      <label htmlFor="businessType">3. Business Type: *</label>
       <select
         id="businessType"
         name="businessType"
@@ -141,7 +141,7 @@ const PartnershipForm = () => {
         <option value="Other">Other</option>
       </select>
 
-      <label htmlFor="location">4. Location (City, State):</label>
+      <label htmlFor="location">4. Location (City, State): *</label>
       <input
         type="text"
         id="location"
@@ -151,7 +151,7 @@ const PartnershipForm = () => {
         required
       />
 
-      <label>5. Partnership Goals (Select all that apply):</label>
+      <label>5. Partnership Goals (Select all that apply): *</label>
       <div className="checkbox-group">
         <div className="checkbox-column">
           {partnershipGoals.slice(0, Math.ceil(partnershipGoals.length / 2)).map((goal) => (
