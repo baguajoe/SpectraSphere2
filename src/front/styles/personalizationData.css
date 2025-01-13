@@ -1,236 +1,267 @@
 /* General Styles for Personalization Data Page */
 .personalization-data-page {
-    background-color: #001f3f; /* Dark blue background */
-    color: #f9f9f9; /* Light text for readability */
-    padding: 60px 20px;
-    font-family: 'Roboto', sans-serif;
-    text-align: center;
-  }
-  
-  /* Page Heading */
-  .personalization-data-page h1 {
-    font-size: 2.5em;
-    color: #27ae60; /* Green text */
-    margin-bottom: 20px;
-    font-weight: bold;
-  }
-  
-  .personalization-data-page h2 {
-    font-size: 2em;
-    color: #27ae60; /* Green text */
-    margin-bottom: 15px;
-  }
-  
-  /* Paragraph Styling */
-  .personalization-data-page p {
-    font-size: 1.2em;
-    line-height: 1.6;
-    margin: 0 auto 20px;
-    color: #f9f9f9; /* Light text */
-    max-width: 800px;
-  }
-  
-  /* Card Container */
+  background-color: #001f3f;
+  /* Dark blue background */
+  color: #f9f9f9;
+  /* Light text for readability */
+  padding: 60px 20px;
+  font-family: 'Roboto', sans-serif;
+  text-align: center;
+}
+
+/* Page Heading */
+.personalization-data-page h1 {
+  font-size: 2.5em;
+  color: #27ae60;
+  /* Green text */
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.personalization-data-page h2 {
+  font-size: 2em;
+  color: #27ae60;
+  /* Green text */
+  margin-bottom: 15px;
+}
+
+/* Paragraph Styling */
+.personalization-data-page p {
+  font-size: 1.2em;
+  line-height: 1.6;
+  margin: 0 auto 20px;
+  color: #f9f9f9;
+  /* Light text */
+  max-width: 800px;
+}
+
+/* Card Container */
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+/* Individual Cards */
+.card {
+  /* background-color: #ffffff;  */
+  /* color: #2c3e50; */
+  /* box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.1); */
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 300px;
+  text-align: left;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  background: linear-gradient(135deg, #27ae60, #2c3e50);
+  color: white;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.card h3 {
+  font-size: 1.8em;
+  /* color: #27ae60; Green heading */
+  color: #001f3f;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.card p {
+  font-size: 1em;
+  line-height: 1.6;
+  /* color: #2c3e50; */
+  color: white;
+}
+
+.card ul {
+  list-style-type: disc;
+  padding-left: 20px;
+  margin: 10px 0 0;
+}
+
+.card ul li {
+  font-size: 0.9em;
+  margin-bottom: 5px;
+  /* color: #2c3e50; */
+  color: white;
+  font-weight: 600;
+}
+
+/* Hover Effect for Cards */
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
   .card-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
-    margin-top: 40px;
-  }
-  
-  /* Individual Cards */
-  .card {
-    /* background-color: #ffffff;  */
-    /* color: #2c3e50; */
-    /* box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.1); */
-    padding: 20px;
-    border-radius: 10px;
-    max-width: 300px;
-    text-align: left;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-
-    background: linear-gradient(135deg, #27ae60, #2c3e50);
-    color: white;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-  }
-  
-  .card h3 {
-    font-size: 1.8em;
-    /* color: #27ae60; Green heading */
-    color: #001f3f;
-    margin-bottom: 10px;
-    font-weight: bold;
-  }
-  
-  .card p {
-    font-size: 1em;
-    line-height: 1.6;
-    /* color: #2c3e50; */
-    color: white;
-  }
-  
-  .card ul {
-    list-style-type: disc;
-    padding-left: 20px;
-    margin: 10px 0 0;
-  }
-  
-  .card ul li {
-    font-size: 0.9em;
-    margin-bottom: 5px;
-    /* color: #2c3e50; */
-    color: white;
-    font-weight: 600;
-  }
-  
-  /* Hover Effect for Cards */
-  .card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
-  }
-  
-  /* Responsive Design */
-  @media (max-width: 768px) {
-    .card-container {
-      flex-direction: column;
-      align-items: center;
-    }
-  
-    .card {
-      max-width: 100%;
-    }
-  }
-  
-
-  /* Personalization Form Container */
-.personalization-form {
-    max-width: 700px;
-    margin: 0 auto;
-    background-color: #001f3f; /* Dark blue background */
-    color: #f9f9f9; /* Light text for readability */
-    padding: 40px 20px;
-    border-radius: 10px;
-    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
-    text-align: left;
-    font-family: 'Roboto', sans-serif;
-  }
-  
-  /* Form Heading */
-  .personalization-form h2 {
-    font-size: 2em;
-    color: #27ae60; /* Green heading */
-    margin-bottom: 20px;
-    text-align: center;
-  }
-  
-  /* Form Description */
-  .personalization-form p {
-    font-size: 1.2em;
-    line-height: 1.6;
-    margin-bottom: 20px;
-    color: #c1ffc9; /* Soft green for body text */
-    text-align: center;
-  }
-  
-  /* Input and Select Fields */
-  .personalization-form input,
-  .personalization-form select,
-  .personalization-form textarea {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 1em;
-    background-color: #f9f9f9;
-    color: #2c3e50;
-    outline: none;
-    transition: border-color 0.3s ease;
-  }
-  
-  .personalization-form input:focus,
-  .personalization-form select:focus,
-  .personalization-form textarea:focus {
-    border-color: #27ae60; /* Green border on focus */
-  }
-  
-  /* Labels */
-  .personalization-form label {
-    font-size: 1em;
-    font-weight: bold;
-    color: #f9f9f9;
-    margin-bottom: 10px;
-    display: block;
-  }
-  
-  /* Checkbox and Radio Options */
-  .personalization-form .checkboxes {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin-bottom: 20px;
-  }
-  
-  .personalization-form .checkboxes label {
-    font-size: 0.9em;
-    color: #c1ffc9;
-    display: flex;
+    flex-direction: column;
     align-items: center;
   }
-  
-  .personalization-form .checkboxes input {
-    margin-right: 10px;
+
+  .card {
+    max-width: 100%;
   }
-  
-  /* Submit Button */
-  .personalization-form .primary-btn {
-    background-color: #27ae60; /* Green button */
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 30px;
+}
+
+
+/* Personalization Form Container */
+.personalization-form {
+  max-width: 700px;
+  margin: 0 auto;
+  background-color: #001f3f;
+  /* Dark blue background */
+  color: #f9f9f9;
+  /* Light text for readability */
+  padding: 40px 20px;
+  border-radius: 10px;
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+  text-align: left;
+  font-family: 'Roboto', sans-serif;
+}
+
+/* Form Heading */
+.personalization-form h2 {
+  font-size: 2em;
+  color: #27ae60;
+  /* Green heading */
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Form Description */
+.personalization-form p {
+  font-size: 1.2em;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  color: #c1ffc9;
+  /* Soft green for body text */
+  text-align: center;
+}
+
+/* Input and Select Fields */
+.personalization-form input,
+.personalization-form select,
+.personalization-form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1em;
+  background-color: #f9f9f9;
+  color: #2c3e50;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.personalization-form input:focus,
+.personalization-form select:focus,
+.personalization-form textarea:focus {
+  border-color: #27ae60;
+  /* Green border on focus */
+}
+
+/* Labels */
+.personalization-form label {
+  font-size: 1em;
+  font-weight: bold;
+  color: #f9f9f9;
+  margin-bottom: 10px;
+  display: block;
+}
+
+/* Checkbox and Radio Options */
+.personalization-form .checkboxes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.personalization-form .checkboxes label {
+  font-size: 0.9em;
+  color: #c1ffc9;
+  display: flex;
+  align-items: center;
+}
+
+.personalization-form .checkboxes input {
+  margin-right: 10px;
+}
+
+/* Submit Button */
+.personalization-form .primary-btn {
+  background-color: #27ae60;
+  /* Green button */
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 30px;
+  font-size: 1em;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  width: 100%;
+  /* Full width for balance */
+}
+
+.personalization-form .primary-btn:hover {
+  background-color: #218c54;
+  /* Darker green on hover */
+  transform: translateY(-2px);
+  /* Slight lift effect */
+}
+
+/* Alert Messages */
+.personalization-form .alert {
+  margin-bottom: 20px;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.personalization-form .alert-success {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.personalization-form .alert-error {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+
+.personalization-form {
+  select {
+    margin-bottom: 0;
+  }
+
+  input {
+    margin-bottom: 0;
+  }
+
+  .card {
+    min-width: 100%;
+  }
+
+  .card:hover {
+    transform: none;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .personalization-form {
+    padding: 30px 15px;
+  }
+
+  .personalization-form h2 {
+    font-size: 1.8em;
+  }
+
+  .personalization-form p {
     font-size: 1em;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-    width: 100%; /* Full width for balance */
   }
-  
-  .personalization-form .primary-btn:hover {
-    background-color: #218c54; /* Darker green on hover */
-    transform: translateY(-2px); /* Slight lift effect */
-  }
-  
-  /* Alert Messages */
-  .personalization-form .alert {
-    margin-bottom: 20px;
-    padding: 10px;
-    border-radius: 5px;
-  }
-  
-  .personalization-form .alert-success {
-    background-color: #d4edda;
-    color: #155724;
-  }
-  
-  .personalization-form .alert-error {
-    background-color: #f8d7da;
-    color: #721c24;
-  }
-  
-  /* Responsive Design */
-  @media (max-width: 768px) {
-    .personalization-form {
-      padding: 30px 15px;
-    }
-  
-    .personalization-form h2 {
-      font-size: 1.8em;
-    }
-  
-    .personalization-form p {
-      font-size: 1em;
-    }
-  }
-  
+}

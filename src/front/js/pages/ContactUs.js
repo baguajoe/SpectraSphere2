@@ -65,7 +65,7 @@ const ContactUs = () => {
     <div className="contact-page h-100">
       <section className="contact-form-section pb-4">
         <form className="contact-form" onSubmit={handleSubmit}>
-          <h2>Get Involved with SpectraSphere</h2>
+          <h2>Get Involved with Eye Forge Studios</h2>
           <p>Have questions or want to collaborate? Reach out to us!</p>
 
           {status.message && (

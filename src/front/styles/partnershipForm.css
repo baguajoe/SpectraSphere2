@@ -62,7 +62,7 @@
 }
 
 /* Checkbox and Radio Options */
-.partnership-form .checkbox-group {
+/* .partnership-form .checkbox-group {
   display: flex;
   justify-content: space-between;
   gap: 20px;
@@ -88,25 +88,45 @@
 .partnership-form .checkbox-group input[type="checkbox"] {
   margin: 0;
   width: auto;
+  } */
+
+/* .partnership-form .form-check-input {
+  width: 8px;
+  margin-right: 5px;
+} */
+
+/* Update the checkbox styles */
+.form-check {
+  display: flex;
+  align-items: flex-start;
+  /* margin-bottom: 0.5rem; */
+  padding-left: 1.5rem;
+  position: relative;
 }
 
-/* .partnership-form .checkbox-group {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin-bottom: 20px;
-  }
-  
-  .partnership-form .checkbox-group label {
-    font-size: 0.9em;
-    color: #c1ffc9;
-    display: flex;
-    align-items: center;
-  }
-  
-  .partnership-form .checkbox-group input {
-    margin-right: 10px;
-  } */
+.form-check-input {
+  /* position: absolute; */
+  left: 0;
+  margin-top: 0.25rem;
+  width: 10px !important;
+  height: 10px;
+}
+
+.form-check-label {
+  margin-left: 8px;
+  color: #c1ffc9;
+  font-size: 0.9em;
+  font-weight: normal;
+}
+
+.partnership-form input {
+  margin-bottom: 0;
+}
+
+.partnership-form .form-select {
+  margin-bottom: 0;
+}
+
 
 /* Submit Button */
 .partnership-form .primary-btn {
@@ -129,6 +149,10 @@
   /* Darker green on hover */
   transform: translateY(-2px);
   /* Slight lift effect */
+}
+
+.partnership-form .card:hover {
+  transform: none !important;
 }
 
 /* Responsive Design */

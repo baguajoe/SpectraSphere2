@@ -4,9 +4,9 @@ import "../../styles/AboutSection.css"; // Import corresponding CSS file
 const AboutSection = () => {
   return (
     <div className="about-section mb-3">
-      <h2>About SpectraSphere</h2>
+      <h2>About Eye Forge Studios</h2>
       <p>
-        At <strong>SpectraSphere</strong>, we bridge technology and creativity to deliver cutting-edge solutions for the cannabis industry.
+        At <strong>Eye Forge Studios</strong>, we bridge technology and creativity to deliver cutting-edge solutions for the cannabis industry.
         Our mission is to empower businesses with tools that streamline operations, enhance compliance, and foster professional connections.
       </p>
       <p>

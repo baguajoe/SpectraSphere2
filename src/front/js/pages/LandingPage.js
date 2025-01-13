@@ -5,9 +5,6 @@ import Features from "../component/Features";
 import GetInTouch from "../component/GetInTouch";
 // import { Footer } from "../component/footer";
 import "../../styles/landingPage.css";
-import "../../styles/aboutSpectraSphere.css";
-import leaf from "../../img/leaf.jpg";
-import phoneImg from "../../img/phoneImg.png";
 import LBCImg from "../../img/LBC.jpg";
 import dispenseMasterImg from "../../img/DispenseMaster.png";
 
@@ -36,7 +33,7 @@ const LandingPage = () => {
         <div className="banner-text">
           <h1>From Seed to Sale, DispenseMaster Manages It All.</h1>
           <p>
-            DispenseMaster by <strong>SpectraSphere Solutions</strong> streamlines cannabis operations with advanced tools for compliance, inventory management, CRM, and networking—empowering your business to thrive in a competitive market.
+            DispenseMaster by <strong>Eye Forge Studios</strong> streamlines cannabis operations with advanced tools for compliance, inventory management, CRM, and networking—empowering your business to thrive in a competitive market.
           </p>
           <img
             src={dispenseMasterImg}
@@ -117,7 +114,7 @@ const LandingPage = () => {
           <div className="card">
             <h3>Opportunities</h3>
             <p>
-              Are you a dispensary owner, grow farm operator, or seedbank owner? Join forces with <strong>SpectraSphere</strong> and revolutionize the cannabis industry.
+              Are you a dispensary owner, grow farm operator, or seedbank owner? Join forces with <strong>Eye Forge Studios</strong> and revolutionize the cannabis industry.
             </p>
           </div>
           <div className="card">

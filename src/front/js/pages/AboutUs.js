@@ -8,7 +8,7 @@ const AboutUs = () => {
     <div className="about-page text-center pb-4">
       <Header />
       <section className="about-banner" style={{ padding: "12px" }}>
-        <h1 className="text-center">Welcome to SpectraSphere</h1>
+        <h1 className="text-center">Welcome to Eye Forge Studios</h1>
         <p className="text-center mb-1">
           Redefining the cannabis industry through innovation, technology, and collaboration.
         </p>
@@ -17,7 +17,7 @@ const AboutUs = () => {
       <section className="team-section">
         <h2 className="text-center">Our Team</h2>
         <p className="text-center px-5">
-          SpectraSphere is powered by a diverse team of innovators, technologists, and cannabis industry experts.
+          Eye Forge Studios is powered by a diverse team of innovators, technologists, and cannabis industry experts.
           Together, we’re committed to creating tools that empower businesses and enhance customer experiences.
         </p>
       </section>

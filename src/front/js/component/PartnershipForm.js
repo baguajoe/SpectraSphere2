@@ -14,6 +14,7 @@ const PartnershipForm = () => {
     comments: "",
   });
 
+  const [touched, setTouched] = useState({});
   const [status, setStatus] = useState({
     message: "",
     isError: false,
@@ -38,18 +39,68 @@ const PartnershipForm = () => {
     setFormData({ ...formData, [name]: value });
   };
 
+  const handleBlur = (e) => {
+    const { name } = e.target;
+    setTouched({ ...touched, [name]: true });
+  };
+
   const handleGoalsChange = (e) => {
     const { value } = e.target;
-    setFormData((prevData) => ({
-      ...prevData,
-      goals: prevData.goals.includes(value)
-        ? prevData.goals.filter((goal) => goal !== value)
-        : [...prevData.goals, value],
-    }));
+    const updatedGoals = formData.goals.includes(value)
+      ? formData.goals.filter((goal) => goal !== value)
+      : [...formData.goals, value];
+    setFormData({ ...formData, goals: updatedGoals });
+    setTouched({ ...touched, goals: true });
+  };
+
+  const getValidationMessage = (fieldName) => {
+    if (!touched[fieldName]) return "";
+
+    switch (fieldName) {
+      case "email":
+        return !formData.email ? "Email is required" : "";
+      case "businessName":
+        return !formData.businessName ? "Business name is required" : "";
+      case "businessType":
+        return !formData.businessType ? "Please select a business type" : "";
+      case "location":
+        return !formData.location ? "Location is required" : "";
+      case "goals":
+        return formData.goals.length === 0 ? "Please select at least one goal" : "";
+      default:
+        return "";
+    }
+  };
+
+  const isFieldInvalid = (fieldName) => {
+    return touched[fieldName] && getValidationMessage(fieldName);
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    // Mark all fields as touched
+    const allFields = {
+      email: true,
+      businessName: true,
+      businessType: true,
+      location: true,
+      goals: true
+    };
+    setTouched(allFields);
+
+    // Check if there are any validation errors
+    const hasErrors = Object.keys(allFields).some(field => getValidationMessage(field));
+
+    if (hasErrors) {
+      setStatus({
+        message: "Please fill in all required fields",
+        isError: true,
+        isSubmitting: false
+      });
+      return;
+    }
+
     setStatus({ message: "", isError: false, isSubmitting: true });
 
     try {
@@ -79,6 +130,7 @@ const PartnershipForm = () => {
         contactMethod: "email",
         comments: "",
       });
+      setTouched({});
 
       setStatus({
         message: data.message || "Thank you for your partnership application!",
@@ -97,88 +149,141 @@ const PartnershipForm = () => {
   };
 
   return (
-    <form className="partnership-form" onSubmit={handleSubmit}>
+    <form className="partnership-form" onSubmit={handleSubmit} noValidate>
       <h2>Partner with Us</h2>
 
       {status.message && (
-        <div className={`alert ${status.isError ? "alert-error" : "alert-success"}`}>
+        <div className={`alert ${status.isError ? 'alert-danger' : 'alert-success'} mb-4`}>
           {status.message}
         </div>
       )}
 
-      <label htmlFor="email">1. Email Address: *</label>
-      <input
-        type="email"
-        id="email"
-        name="email"
-        value={formData.email}
-        onChange={handleChange}
-        required
-      />
+      <div className="mb-3">
+        <label htmlFor="email" className="form-label">
+          1. Email Address: *
+        </label>
+        <input
+          type="email"
+          className={`form-control ${isFieldInvalid('email') ? 'is-invalid' : ''}`}
+          id="email"
+          name="email"
+          value={formData.email}
+          onChange={handleChange}
+          onBlur={handleBlur}
+          required
+        />
+        {isFieldInvalid('email') && (
+          <div className="invalid-feedback">{getValidationMessage('email')}</div>
+        )}
+      </div>
 
-      <label htmlFor="businessName">2. Business Name: *</label>
-      <input
-        type="text"
-        id="businessName"
-        name="businessName"
-        value={formData.businessName}
-        onChange={handleChange}
-        required
-      />
+      <div className="mb-3">
+        <label htmlFor="businessName" className="form-label">
+          2. Business Name: *
+        </label>
+        <input
+          type="text"
+          className={`form-control ${isFieldInvalid('businessName') ? 'is-invalid' : ''}`}
+          id="businessName"
+          name="businessName"
+          value={formData.businessName}
+          onChange={handleChange}
+          onBlur={handleBlur}
+          required
+        />
+        {isFieldInvalid('businessName') && (
+          <div className="invalid-feedback">{getValidationMessage('businessName')}</div>
+        )}
+      </div>
 
-      <label htmlFor="businessType">3. Business Type: *</label>
-      <select
-        id="businessType"
-        name="businessType"
-        value={formData.businessType}
-        onChange={handleChange}
-        required
-      >
-        <option value="">Select</option>
-        <option value="Dispensary">Dispensary</option>
-        <option value="Grower">Grower</option>
-        <option value="Seedbank">Seedbank</option>
-        <option value="Other">Other</option>
-      </select>
+      <div className="mb-3">
+        <label htmlFor="businessType" className="form-label">
+          3. Business Type: *
+        </label>
+        <select
+          className={`form-select ${isFieldInvalid('businessType') ? 'is-invalid' : ''}`}
+          id="businessType"
+          name="businessType"
+          value={formData.businessType}
+          onChange={handleChange}
+          onBlur={handleBlur}
+          required
+        >
+          <option value="">Select</option>
+          <option value="Dispensary">Dispensary</option>
+          <option value="Grower">Grower</option>
+          <option value="Seedbank">Seedbank</option>
+          <option value="Other">Other</option>
+        </select>
+        {isFieldInvalid('businessType') && (
+          <div className="invalid-feedback">{getValidationMessage('businessType')}</div>
+        )}
+      </div>
 
-      <label htmlFor="location">4. Location (City, State): *</label>
-      <input
-        type="text"
-        id="location"
-        name="location"
-        value={formData.location}
-        onChange={handleChange}
-        required
-      />
+      <div className="mb-3">
+        <label htmlFor="location" className="form-label">
+          4. Location (City, State): *
+        </label>
+        <input
+          type="text"
+          className={`form-control ${isFieldInvalid('location') ? 'is-invalid' : ''}`}
+          id="location"
+          name="location"
+          value={formData.location}
+          onChange={handleChange}
+          onBlur={handleBlur}
+          required
+        />
+        {isFieldInvalid('location') && (
+          <div className="invalid-feedback">{getValidationMessage('location')}</div>
+        )}
+      </div>
 
-      <label>5. Partnership Goals (Select all that apply): *</label>
-      <div className="checkbox-group">
-        <div className="checkbox-column">
-          {partnershipGoals.slice(0, Math.ceil(partnershipGoals.length / 2)).map((goal) => (
-            <label key={goal}>
-              <input
-                type="checkbox"
-                value={goal}
-                checked={formData.goals.includes(goal)}
-                onChange={handleGoalsChange}
-              />
-              {goal}
-            </label>
-          ))}
+      <div className="mb-3">
+        <label className="form-label">
+          5. Partnership Goals (Select all that apply): *
+        </label>
+        <div className={`card p-3 ${isFieldInvalid('goals') ? 'border-danger' : ''}`} style={{ background: 'transparent', minWidth: '100%' }}>
+          <div className="row">
+            <div className="col-md-6">
+              {partnershipGoals.slice(0, Math.ceil(partnershipGoals.length / 2)).map((goal) => (
+                <div className="form-check" key={goal}>
+                  <input
+                    type="checkbox"
+                    className="form-check-input"
+                    id={`goal-${goal}`}
+                    value={goal}
+                    checked={formData.goals.includes(goal)}
+                    onChange={handleGoalsChange}
+                  />
+                  <label className="form-check-label" htmlFor={`goal-${goal}`}>
+                    {goal}
+                  </label>
+                </div>
+              ))}
+            </div>
+            <div className="col-md-6">
+              {partnershipGoals.slice(Math.ceil(partnershipGoals.length / 2)).map((goal) => (
+                <div className="form-check" key={goal}>
+                  <input
+                    type="checkbox"
+                    className="form-check-input"
+                    id={`goal-${goal}`}
+                    value={goal}
+                    checked={formData.goals.includes(goal)}
+                    onChange={handleGoalsChange}
+                  />
+                  <label className="form-check-label" htmlFor={`goal-${goal}`}>
+                    {goal}
+                  </label>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
-        <div className="checkbox-column">
-          {partnershipGoals.slice(Math.ceil(partnershipGoals.length / 2)).map((goal) => (
-            <label key={goal}>
-              <input
-                type="checkbox"
-                value={goal}
-                checked={formData.goals.includes(goal)}
-                onChange={handleGoalsChange}
-              />
-              {goal}
-            </label>
-          ))}
-        </div>
+        {isFieldInvalid('goals') && (
+          <div className="text-danger small mt-1">{getValidationMessage('goals')}</div>
+        )}
       </div>
       {/* <label>5. Partnership Goals (Select all that apply):</label>
       <div className="checkbox-group" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '10px' }}>
@@ -195,45 +300,68 @@ const PartnershipForm = () => {
         ))}
       </div> */}
 
-      <label htmlFor="currentTools">6. Current Tools or Platforms:</label>
-      <textarea
-        id="currentTools"
-        name="currentTools"
-        value={formData.currentTools}
-        onChange={handleChange}
-      ></textarea>
+      <div className="mb-3">
+        <label htmlFor="currentTools" className="form-label">
+          6. Current Tools or Platforms:
+        </label>
+        <textarea
+          className="form-control"
+          id="currentTools"
+          name="currentTools"
+          value={formData.currentTools}
+          onChange={handleChange}
+          rows="3"
+        />
+      </div>
 
-      <label htmlFor="challenges">7. Biggest Challenges:</label>
-      <textarea
-        id="challenges"
-        name="challenges"
-        value={formData.challenges}
-        onChange={handleChange}
-      ></textarea>
+      <div className="mb-3">
+        <label htmlFor="challenges" className="form-label">
+          7. Biggest Challenges:
+        </label>
+        <textarea
+          className="form-control"
+          id="challenges"
+          name="challenges"
+          value={formData.challenges}
+          onChange={handleChange}
+          rows="3"
+        />
+      </div>
 
-      <label htmlFor="contactMethod">8. Preferred Contact Method:</label>
-      <select
-        id="contactMethod"
-        name="contactMethod"
-        value={formData.contactMethod}
-        onChange={handleChange}
-      >
-        <option value="email">Email</option>
-        <option value="phone">Phone</option>
-      </select>
+      <div className="mb-3">
+        <label htmlFor="contactMethod" className="form-label">
+          8. Preferred Contact Method:
+        </label>
+        <select
+          className="form-select"
+          id="contactMethod"
+          name="contactMethod"
+          value={formData.contactMethod}
+          onChange={handleChange}
+        >
+          <option value="email">Email</option>
+          <option value="phone">Phone</option>
+        </select>
+      </div>
 
-      <label htmlFor="comments">9. Additional Comments:</label>
-      <textarea
-        id="comments"
-        name="comments"
-        value={formData.comments}
-        onChange={handleChange}
-      ></textarea>
+      <div className="mb-3">
+        <label htmlFor="comments" className="form-label">
+          9. Additional Comments:
+        </label>
+        <textarea
+          className="form-control"
+          id="comments"
+          name="comments"
+          value={formData.comments}
+          onChange={handleChange}
+          rows="3"
+        />
+      </div>
 
       <button type="submit" className="primary-btn" disabled={status.isSubmitting}>
         {status.isSubmitting ? "Submitting..." : "Submit"}
       </button>
-    </form>
+    </form >
   );
 };
 

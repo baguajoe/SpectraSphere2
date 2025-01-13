@@ -4,7 +4,7 @@ import React from "react";
 const ContactPage = () => {
   return (
     <section className="contact-page">
-      <h1>Get Involved with SpectraSphere</h1>
+      <h1>Get Involved with Eye Forge Studios</h1>
       <p>Have questions or want to collaborate? Reach out to us!</p>
       <form className="contact-form">
         <input type="text" placeholder="Your Name" required />

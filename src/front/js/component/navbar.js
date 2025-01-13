@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import "../../styles/navbar.css";
-import logo from "../../img/SpectraLogo.png";
+import logo from "../../img/EyeForgeStudios.png";
 
 export const Navbar = () => {
   const navigate = useNavigate();
@@ -15,7 +15,7 @@ export const Navbar = () => {
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
       <div className="container">
         <NavLink to="/" className="navbar-brand">
-          <img src={logo} alt="SpectraSphere" className="logo" />
+          <img src={logo} alt="Eye Forge Studios Logo" className="logo" />
         </NavLink>
 
         {/* Toggle button */}
