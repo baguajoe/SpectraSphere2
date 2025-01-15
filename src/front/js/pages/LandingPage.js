@@ -58,7 +58,7 @@ const LandingPage = () => {
           <img
             src={LBCImg}
             alt="DispenseMaster"
-            style={{ height: '250px', marginLeft: '15px', marginRight: '15px' }}
+            style={{ height: '250px', marginLeft: '15px', marginRight: '15px', maxWidth: "100vw" }}
           />
         </div>
       </section>
@@ -72,7 +72,7 @@ const LandingPage = () => {
         <h1 className="text-white">Personalization Data Form</h1>
         <h2>How Your Input Helps</h2>
         {/* <p className="text-white">This form is anonymous...</p> */}
-        <p className="text-white" style={{ paddingLeft: "5%", paddingRight: "5%" }}>
+        <p className="text-white" style={{ paddingLeft: "25%", paddingRight: "25%" }}>
           This form is anonymous and helps us develop AI-driven solutions that enhance the cannabis industry.
           Your insights will contribute to creating more personalized experiences, improving product recommendations,
           and advancing our understanding of consumer preferences—all while maintaining your privacy.

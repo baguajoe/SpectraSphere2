@@ -8,8 +8,8 @@ const PartnershipPage = () => {
       <section className="partnership-intro">
         <h1>Partner with Us</h1>
         <p>
-          Join forces with <strong>Eye Forge Studios</strong> to revolutionize the cannabis industry.
-          Whether you’re a dispensary owner, grow farm operator, or seedbank owner, our platforms are tailored to help you thrive in this competitive market.
+          Join forces with <strong>Eye Forge Studios</strong> and leverage platforms like <strong>DispenseMaster</strong> and <strong>LeafBridgeConnect</strong> to revolutionize the cannabis industry.
+          Whether you’re a dispensary owner, grow farm operator, or seedbank owner, our tools are designed to help you thrive in this competitive market.
         </p>
         <h2>Why Partner with Us?</h2>
         <ul className="px-5">

@@ -1,5 +1,4 @@
-General Styles
-body {
+General Styles body {
   font-family: 'Roboto', sans-serif;
   margin: 0;
   padding: 0;
@@ -7,7 +6,9 @@ body {
   color: #2c3e50;
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   color: #27ae60;
 }
 
@@ -49,11 +50,16 @@ h1, h2, h3 {
   font-weight: bold;
 }
 
-.btn-primary:hover, .btn-secondary:hover {
+.btn-primary:hover,
+.btn-secondary:hover {
   background-color: #218c54;
   color: white;
   border-color: #218c54;
   transition: all 0.3s ease;
+}
+
+.landing-page {
+  max-width: 100vw !important;
 }
 
 /* Main Banner Section */
@@ -189,12 +195,15 @@ h1, h2, h3 {
   color: #c1ffc9;
 }
 
- /* buttons  */
-.leafbridgeconnect-section .cta-buttons, .main-banner .cta-buttons {
+/* buttons  */
+.leafbridgeconnect-section .cta-buttons,
+.main-banner .cta-buttons {
   margin-top: 20px;
 }
 
-.leafbridgeconnect-section .cta-buttons button, .main-banner .cta-buttons button, .features .cta-buttons {
+.leafbridgeconnect-section .cta-buttons button,
+.main-banner .cta-buttons button,
+.features .cta-buttons {
   padding: 10px 20px;
   border-radius: 30px;
   border: none;
@@ -203,13 +212,17 @@ h1, h2, h3 {
   margin: 0 10px;
 }
 
-.leafbridgeconnect-section .primary-btn, .main-banner .primary-btn, .features .cta-buttons {
+.leafbridgeconnect-section .primary-btn,
+.main-banner .primary-btn,
+.features .cta-buttons {
   background-color: #27ae60;
   color: white;
   border: none;
 }
 
-.leafbridgeconnect-section .primary-btn:hover, .main-banner .primary-btn:hover, .features .cta-buttons:hover {
+.leafbridgeconnect-section .primary-btn:hover,
+.main-banner .primary-btn:hover,
+.features .cta-buttons:hover {
   background-color: #218c54;
 }
 
@@ -223,12 +236,15 @@ h1, h2, h3 {
 }
 
 .personalization-data-form {
-  background-color: #001f3f; /* Dark blue background */
-  color: #f9f9f9; /* Light text for contrast */
+  background-color: #001f3f;
+  /* Dark blue background */
+  color: #f9f9f9;
+  /* Light text for contrast */
   padding: 60px 20px;
   text-align: center;
   border-radius: 10px;
-  margin: 40px 0; /* Space between other sections */
+  margin: 40px 0;
+  /* Space between other sections */
 }
 
 .personalization-data-form .cta-content {
@@ -239,7 +255,8 @@ h1, h2, h3 {
 .personalization-data-form h2 {
   font-size: 2.5em;
   margin-bottom: 20px;
-  color: #27ae60; /* Green accent */
+  color: #27ae60;
+  /* Green accent */
 }
 
 .personalization-data-form p {
@@ -254,7 +271,8 @@ h1, h2, h3 {
   text-align: left;
   margin: 20px auto;
   max-width: 600px;
-  color: #c1ffc9; /* Soft green for list items */
+  color: #c1ffc9;
+  /* Soft green for list items */
 }
 
 .personalization-data-form ul li {
@@ -275,10 +293,115 @@ h1, h2, h3 {
 }
 
 .personalization-data-form .primary-btn:hover {
-  background-color: #218c54; /* Darker green */
+  background-color: #218c54;
+  /* Darker green */
   transform: translateY(-2px);
 }
 
+/* Get In Touch Section Styles */
+.get-in-touch {
+  background-color: #f9f9f9;
+  padding: 2rem 1rem;
+}
+
+.get-in-touch-card {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  /* max-width: 600px; */
+}
+
+/* Form control overrides for mobile */
+.get-in-touch .form-control {
+  font-size: 16px !important;
+  /* Prevents zoom on iOS */
+  padding: 12px 16px;
+  border-radius: 6px;
+  border: 1px solid #ced4da;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.get-in-touch .form-control:focus {
+  border-color: #27ae60;
+  box-shadow: 0 0 0 0.2rem rgba(39, 174, 96, 0.25);
+}
+
+/* Checkbox styling */
+.interest-checkboxes {
+  padding: 0.5rem 0;
+}
+
+.get-in-touch .form-check {
+  padding-left: 1.8rem;
+  margin-bottom: 0.75rem;
+}
+
+.get-in-touch .form-check-input {
+  width: 1.2rem;
+  height: 1.2rem;
+  margin-left: -1.8rem;
+  margin-top: 0.3rem;
+  border: 2px solid #ced4da;
+}
+
+.get-in-touch .form-check-input:checked {
+  background-color: #27ae60;
+  border-color: #27ae60;
+}
+
+.get-in-touch .form-check-label {
+  padding-top: 0.2rem;
+  font-size: 1rem;
+  color: #495057;
+}
+
+/* Button styling */
+.get-in-touch .btn-primary {
+  background-color: #27ae60;
+  border-color: #27ae60;
+  padding: 12px 24px;
+  font-weight: 500;
+}
+
+.get-in-touch .btn-primary:hover:not(:disabled) {
+  background-color: #219653;
+  border-color: #219653;
+}
+
+.get-in-touch .btn-primary:disabled {
+  background-color: #27ae60;
+  border-color: #27ae60;
+  opacity: 0.65;
+}
+
+/* Mobile optimizations */
+@media (max-width: 576px) {
+  .get-in-touch-card {
+    padding: 1.5rem;
+  }
+
+  .get-in-touch .form-control {
+    padding: 10px 14px;
+  }
+
+  .get-in-touch .form-check {
+    margin-bottom: 0.5rem;
+  }
+}
+
+/* iOS specific adjustments */
+@supports (-webkit-touch-callout: none) {
+
+  .get-in-touch .form-control,
+  .get-in-touch .form-check-label {
+    font-size: 16px !important;
+  }
+
+  .get-in-touch .form-check-input {
+    margin-top: 0.2rem;
+  }
+}
 
 /* Get In Touch Section */
 .get-in-touch {
@@ -360,7 +483,8 @@ blockquote {
   text-align: center;
   background-color: #001f3f;
   color: white;
-  padding: 10px 20px; /* Reduced padding */
+  padding: 10px 20px;
+  /* Reduced padding */
 }
 
 .footer-text {
@@ -369,7 +493,8 @@ blockquote {
 
 /* About SpectraSphere Section */
 .about-spectrasphere {
-  padding: 40px 20px; /* Reduced vertical padding */
+  padding: 40px 20px;
+  /* Reduced vertical padding */
   background-color: #001f3f;
   text-align: center;
   color: #f9f9f9;
@@ -379,30 +504,39 @@ blockquote {
   font-size: 2.5em;
   font-weight: bold;
   text-transform: uppercase;
-  letter-spacing: 2px; /* Slightly less spacing */
-  margin-bottom: 20px; /* Reduced spacing */
+  letter-spacing: 2px;
+  /* Slightly less spacing */
+  margin-bottom: 20px;
+  /* Reduced spacing */
   color: #27ae60;
 }
 
 .about-spectrasphere p {
   font-size: 1.1em;
-  line-height: 1.6; /* Adjusted line height for better fit */
+  line-height: 1.6;
+  /* Adjusted line height for better fit */
   max-width: 900px;
-  margin: 0 auto 20px; /* Reduced spacing */
+  margin: 0 auto 20px;
+  /* Reduced spacing */
 }
 
 .about-spectrasphere .separator {
-  width: 80px; /* Reduced width */
-  height: 4px; /* Reduced height */
+  width: 80px;
+  /* Reduced width */
+  height: 4px;
+  /* Reduced height */
   background-color: #27ae60;
-  margin: 15px auto; /* Reduced spacing */
+  margin: 15px auto;
+  /* Reduced spacing */
   border-radius: 4px;
 }
 
 .about-spectrasphere a {
-  margin-top: 15px; /* Reduced spacing */
+  margin-top: 15px;
+  /* Reduced spacing */
   font-size: 1em;
-  padding: 10px 20px; /* Reduced padding */
+  padding: 10px 20px;
+  /* Reduced padding */
 }
 
 /* Responsive Design */
@@ -431,14 +565,16 @@ blockquote {
 .community-involvement,
 .partner-with-us {
   padding: 60px 20px;
-  background-color: #001f3f; /* Light gray background */
+  background-color: #001f3f;
+  /* Light gray background */
   text-align: center;
 }
 
 .community-involvement h2,
 .partner-with-us h2 {
   font-size: 2.5em;
-  color: #27ae60; /* Green heading */
+  color: #27ae60;
+  /* Green heading */
   margin-bottom: 30px;
 }
 
@@ -454,8 +590,10 @@ blockquote {
 
 /* Individual Card Styles */
 .card {
-  background-color: #013a63; /* Slightly lighter blue */
-  color: #ecd7d7; /* Light text for readability */
+  background-color: #013a63;
+  /* Slightly lighter blue */
+  color: #ecd7d7;
+  /* Light text for readability */
   border-radius: 10px;
   padding: 20px;
   box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
@@ -467,7 +605,8 @@ blockquote {
 
 .card h3 {
   font-size: 1.8em;
-  color: #27ae60; /* Green card heading */
+  color: #27ae60;
+  /* Green card heading */
   margin-bottom: 15px;
 }
 
@@ -485,12 +624,14 @@ blockquote {
 
 .card ul li {
   margin-bottom: 10px;
-  color: #c1ffc9; /* Soft green text */
+  color: #c1ffc9;
+  /* Soft green text */
 }
 
 /* Buttons inside Cards */
 .card .primary-btn {
-  background-color: #27ae60; /* Green button */
+  background-color: #27ae60;
+  /* Green button */
   color: white;
   border: none;
   border-radius: 30px;
@@ -500,13 +641,16 @@ blockquote {
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.3s ease;
   display: block;
-  width: 100%; /* Full-width button */
+  width: 100%;
+  /* Full-width button */
   text-align: center;
 }
 
 .card .primary-btn:hover {
-  background-color: #218c54; /* Darker green on hover */
-  transform: translateY(-2px); /* Slight lift effect */
+  background-color: #218c54;
+  /* Darker green on hover */
+  transform: translateY(-2px);
+  /* Slight lift effect */
 }
 
 /* Responsive Design */
@@ -517,7 +661,8 @@ blockquote {
   }
 
   .card {
-    max-width: 100%; /* Allow full width for small screens */
+    max-width: 100%;
+    /* Allow full width for small screens */
   }
 
   .community-involvement h2,
@@ -525,4 +670,3 @@ blockquote {
     font-size: 2em;
   }
 }
-
