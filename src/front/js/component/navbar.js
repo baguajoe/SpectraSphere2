@@ -75,7 +75,7 @@ export const Navbar = () => {
                 className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}
                 onClick={() => setIsOpen(false)}
               >
-                Personalization Data
+                Personalization Data Form
               </NavLink>
             </li>
             <li className="nav-item">

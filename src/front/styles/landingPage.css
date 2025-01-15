@@ -103,9 +103,16 @@ h3 {
   color: #27ae60;
 }
 
-.features-grid {
+/* .features-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  margin-top: 20px;
+  padding-left: 10%;
+  padding-right: 10%;
+} */
+.features-grid {
+  display: grid;
   gap: 30px;
   margin-top: 20px;
   padding-left: 10%;
@@ -546,11 +553,11 @@ blockquote {
     text-align: center;
   }
 
-  .features-grid {
+  /* .features-grid {
     grid-template-columns: 1fr;
     padding-left: 10%;
     padding-right: 10%;
-  }
+  } */
 
   .leafbridgeconnect-features {
     grid-template-columns: 1fr;
@@ -558,6 +565,28 @@ blockquote {
 
   .get-in-touch form input {
     width: 100%;
+  }
+}
+
+
+/* Large screens (1200px and up) - 3 cards per row */
+@media (min-width: 1200px) {
+  .features-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Medium screens (768px to 1199px) - 2 cards per row */
+@media (min-width: 768px) and (max-width: 1199px) {
+  .features-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Small screens (below 768px) - 1 card per row */
+@media (max-width: 767px) {
+  .features-grid {
+    grid-template-columns: 1fr;
   }
 }
 
