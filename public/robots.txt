@@ -1,0 +1,24 @@
+# /public/robots.txt
+User-agent: *
+Allow: /
+
+# Main pages
+Allow: /about-us
+Allow: /features
+Allow: /partnership
+Allow: /personalization-data
+
+# Allow search engines to access assets
+Allow: /static/
+Allow: /images/
+Allow: /css/
+Allow: /js/
+
+# Protect sensitive areas
+Disallow: /admin/
+Disallow: /internal/
+Disallow: /private/
+Disallow: /api/
+
+# Sitemap location
+Sitemap: https://eyeforgestudios.com/sitemap.xml

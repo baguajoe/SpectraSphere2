@@ -9,5 +9,8 @@
     },
     "[css]": {
         "editor.defaultFormatter": "ms-vsliveshare.vsliveshare"
+    },
+    "[html]": {
+        "editor.defaultFormatter": "vscode.html-language-features"
     }
 }
