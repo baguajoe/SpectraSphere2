@@ -181,6 +181,7 @@ const PersonalizationDataForm = () => {
       });
       setTouched({});
 
+      alert("Thank you for filling out the Personlization Data Form. Your input is very valuable to us.")
       setStatus({
         message: data.message || "Thank you for sharing your preferences!",
         isError: false,

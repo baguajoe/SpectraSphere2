@@ -52,7 +52,9 @@ const ContactUs = () => {
 
     if (result.success) {
       setFormData({ name: "", email: "", comment: "", interests: [] });
+      alert("Thank you for contacting us.")
     }
+  
 
     setStatus({
       message: result.message,

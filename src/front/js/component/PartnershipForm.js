@@ -32,6 +32,7 @@ const PartnershipForm = () => {
     "Sustainability initiatives",
     "Mentorship programs",
     "Product co-development opportunities",
+    "Other",
   ];
 
   const handleChange = (e) => {
@@ -78,6 +79,7 @@ const PartnershipForm = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    alert("Thank you for filling out the partnership form. We look forward to the opportunity of doing business with you.");
 
     // Mark all fields as touched
     const allFields = {
