@@ -10,24 +10,6 @@ const Products = ({ products }) => {
 
     const defaultProducts = [
         {
-            title: "DoppelFlex",
-            subtitle: "AI-Powered Selfie-to-3D Avatar Creation & Real-Time Motion Capture",
-            description: (
-                <>
-                    <p>
-                        DoppelFlex transforms selfies into fully rigged, animated 3D avatars, ready for VR, gaming, and virtual content creation. Featuring AI mesh reconstruction, MediaPipe Pose tracking, and real-time MoCap animation.
-                    </p>
-                    <ul>
-                        <li>AI-driven Selfie to 3D Mesh Conversion</li>
-                        <li>Real-Time Motion Capture Animation</li>
-                        <li>VR-Ready Avatar Export</li>
-                        <li>In-App Rigging and Beat-Synced Animation</li>
-                    </ul>
-                </>
-            ),
-            link: "/doppelflex"
-        },
-        {
             title: "StreampireX",
             subtitle: "Streaming, Radio, and Podcast Platform",
             description: (
@@ -45,7 +27,27 @@ const Products = ({ products }) => {
             ),
             link: "/streampirex"
         },
-
+        
+        
+        {
+            title: "DoppelFlex",
+            subtitle: "AI-Powered Selfie-to-3D Avatar Creation & Real-Time Motion Capture",
+            description: (
+                <>
+                    <p>
+                        DoppelFlex transforms selfies into fully rigged, animated 3D avatars, ready for VR, gaming, and virtual content creation. Featuring AI mesh reconstruction, MediaPipe Pose tracking, and real-time MoCap animation.
+                    </p>
+                    <ul>
+                        <li>AI-driven Selfie to 3D Mesh Conversion</li>
+                        <li>Real-Time Motion Capture Animation</li>
+                        <li>VR-Ready Avatar Export</li>
+                        <li>In-App Rigging and Beat-Synced Animation</li>
+                    </ul>
+                </>
+            ),
+            link: "/doppelflex"
+        },
+        
         {
             title: "CypherSifu",
             subtitle: "AI Flow Coach & Voice-to-Beat Training App",
