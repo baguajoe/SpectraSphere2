@@ -1,10 +1,15 @@
 {
   "version": 2,
+  "env": {
+    "NODE_VERSION": "18"
+  },
   "builds": [
     {
       "src": "package.json",
       "use": "@vercel/static-build",
-      "config": { "distDir": "public" }
+      "config": {
+        "distDir": "public"
+      }
     }
   ],
   "routes": [
