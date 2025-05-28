@@ -14,7 +14,14 @@ import AboutUs from "./pages/AboutUs"; // Import AboutPage
 import ContactUs from "./pages/ContactUs"; // Import AboutPage
 import PartnershipPage from "./pages/PartnershipPage"; // Import the page
 import PersonalizationData from "./pages/PersonalizationData";
-import FeatureComparisonPage from "./pages/FeatureComparisonPage";
+// import FeatureComparisonPage from "./pages/FeatureComparisonPage";
+import Services from "./pages/Services";
+
+import DoppelFlexPage from "./pages/DoppelFlexPage";
+import StreampireXPage from "./pages/StreampireXPage";
+import DispenseMasterPage from "./pages/DispenseMasterPage";
+import CypherSifuPage from "./pages/CypherSifuPage";
+
 
 // import NotFound from "./pages/NotFound"; // Optional: Import a NotFound component for invalid routes
 
@@ -32,7 +39,13 @@ const Layout = () => {
                     <Routes>
                         <Route element={<LandingPage />} path="/" /> {/* Set LandingPage as the default */}
                         <Route path="/about-us" element={<AboutUs />} /> {/* About Us Page */}
-                        <Route path="/features" element={<FeatureComparisonPage />} />
+                        <Route path="/services" element={<Services />} /> {/* Services Page */}
+                        <Route path="/doppelflex" element={<DoppelFlexPage />} /> 
+                        <Route path="/streampirex" element={<StreampireXPage />} /> 
+                        <Route path="/dispensemaster" element={<DispenseMasterPage />} /> 
+                        <Route path="/cyphersifu" element={<CypherSifuPage />} /> 
+
+                        {/* <Route path="/features" element={<FeatureComparisonPage />} /> */}
                         <Route path="/partnership" element={<PartnershipPage />} />; // Add route
                         <Route path="/personalization-data" element={<PersonalizationData />} />
                         <Route path="/contact-us" element={<ContactUs/>} />

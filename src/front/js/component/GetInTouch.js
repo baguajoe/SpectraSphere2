@@ -119,11 +119,11 @@ const GetInTouch = () => {
               <label className="form-label"><b>Areas of Interest:</b></label>
               <div className="interest-checkboxes">
                 {[
-                  "Updates on DispenseMaster",
-                  "Updates on LeafBridgeConnect",
-                  "Partnership Opportunities",
-                  "Educational Content",
-                  "Job Opportunities"
+                  "Updates on DoppelFlex",
+                  "Updates on StreampireX",
+                  "CypherSifu",
+                  "DispenseMaster",
+                  "LeafBridgeConnect"
                 ].map((interest) => (
                   <div className="form-check mb-2" key={interest}>
                     <input

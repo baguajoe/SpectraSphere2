@@ -112,51 +112,51 @@ const ContactUs = () => {
               <input
                 type="checkbox"
                 name="interests"
-                value="Updates on DispenseMaster"
-                checked={formData.interests.includes("Updates on DispenseMaster")}
+                value="Updates on DoppelFlex"
+                checked={formData.interests.includes("Updates on DoppelFlex")}
                 onChange={handleChange}
               />
-              Updates on DispenseMaster
+              Updates on DoppelFlex
             </label>
             <label>
               <input
                 type="checkbox"
                 name="interests"
-                value="Updates on LeafBridgeConnect"
-                checked={formData.interests.includes("Updates on LeafBridgeConnect")}
+                value="Updates on StreampireX"
+                checked={formData.interests.includes("Updates on StreampireX")}
                 onChange={handleChange}
               />
-              Updates on LeafBridgeConnect
+              Updates on StreampireX
             </label>
             <label>
               <input
                 type="checkbox"
                 name="interests"
-                value="Partnership Opportunities"
-                checked={formData.interests.includes("Partnership Opportunities")}
+                value="CypherSifu"
+                checked={formData.interests.includes("CypherSifu")}
                 onChange={handleChange}
               />
-              Partnership Opportunities
+              CypherSifu
             </label>
             <label>
               <input
                 type="checkbox"
                 name="interests"
-                value="Educational Content"
-                checked={formData.interests.includes("Educational Content")}
+                value="DispenseMaster"
+                checked={formData.interests.includes("DispenseMaster")}
                 onChange={handleChange}
               />
-              Educational Content
+              DispenseMaster
             </label>
             <label>
               <input
                 type="checkbox"
                 name="interests"
-                value="Job Opportunities"
-                checked={formData.interests.includes("Job Opportunities")}
+                value="LeafBridgeConnect"
+                checked={formData.interests.includes("LeafBridgeConnect")}
                 onChange={handleChange}
               />
-              Job Opportunities
+              LeafBridgeConnect
             </label>
           </div>
 

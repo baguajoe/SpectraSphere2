@@ -50,6 +50,15 @@ export const Navbar = () => {
               >
                 About Us
               </NavLink>
+              </li>
+            <li className="nav-item">
+              <NavLink
+                to="/Services"
+                className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}
+                onClick={() => setIsOpen(false)}
+              >
+                Services
+              </NavLink>
             </li>
             <li className="nav-item">
               <NavLink
@@ -60,7 +69,7 @@ export const Navbar = () => {
                 Partnership
               </NavLink>
             </li>
-            <li className="nav-item">
+            {/* <li className="nav-item">
               <NavLink
                 to="/features"
                 className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}
@@ -68,7 +77,7 @@ export const Navbar = () => {
               >
                 Features
               </NavLink>
-            </li>
+            </li> */}
             <li className="nav-item">
               <NavLink
                 to="/personalization-data"
