@@ -69,7 +69,7 @@ const Products = ({ products }) => {
         },
 
         {
-            title: "VitalScope",
+            title: "MyVitalScope",
             subtitle: "AI-Powered Longevity Coach & Health Optimization Platform",
             description: (
                 <>
@@ -84,7 +84,7 @@ const Products = ({ products }) => {
                     </ul>
                 </>
             ),
-            link: "/vitalscope"
+            link: "/myvitalscope"
         },
 
         {

@@ -123,7 +123,7 @@ const GetInTouch = () => {
                   "Updates on StreampireX",
                   "CypherSifu",
                   "DispenseMaster",
-                  "VitalScope"
+                  "MyVitalScope"
                 ].map((interest) => (
                   <div className="form-check mb-2" key={interest}>
                     <input

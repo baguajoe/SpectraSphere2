@@ -21,7 +21,7 @@ import DoppelFlexPage from "./pages/DoppelFlexPage";
 import StreampireXPage from "./pages/StreampireXPage";
 import DispenseMasterPage from "./pages/DispenseMasterPage";
 import CypherSifuPage from "./pages/CypherSifuPage";
-import VitalScopePage from "./pages/VitalScopePage";
+import MyVitalScopePage from "./pages/MyVitalScopePage";
 
 
 // import NotFound from "./pages/NotFound"; // Optional: Import a NotFound component for invalid routes
@@ -45,7 +45,7 @@ const Layout = () => {
                         <Route path="/streampirex" element={<StreampireXPage />} /> 
                         <Route path="/dispensemaster" element={<DispenseMasterPage />} /> 
                         <Route path="/cyphersifu" element={<CypherSifuPage />} /> 
-                        <Route path="/vitalscope" element={<VitalScopePage />} /> 
+                        <Route path="/myvitalscope" element={<MyVitalScopePage />} /> 
 
                         {/* <Route path="/features" element={<FeatureComparisonPage />} /> */}
                         <Route path="/partnership" element={<PartnershipPage />} />; // Add route

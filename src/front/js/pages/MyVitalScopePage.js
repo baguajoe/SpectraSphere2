@@ -5,7 +5,7 @@ const VitalScopePage = () => {
    <div>
      <header className="header">
        <div className="header-content">
-         <h1>VitalScope</h1>
+         <h1>MyVitalScope</h1>
          <p className="subheading">Optimize Your Biology. Extend Your Healthspan.</p>
        </div>
      </header>
@@ -50,7 +50,7 @@ const VitalScopePage = () => {
      <section className="get-in-touch">
        <div className='container py-4'>
          <div className="get-in-touch-card">
-           <h2>Join the VitalScope Beta</h2>
+           <h2>Join the MyVitalScope Beta</h2>
            <form>
              <input type="email" placeholder="Enter your email" required />
              <button type="submit">Join Beta</button>
