@@ -68,6 +68,24 @@ const Products = ({ products }) => {
             link: "/cyphersifu"
         },
 
+        {
+            title: "VitalScope",
+            subtitle: "AI-Powered Longevity Coach & Health Optimization Platform",
+            description: (
+                <>
+                    <p>
+                        Transform your health data into personalized longevity insights and optimize your biological age with cutting-edge AI. Combine wearable data, voice biomarkers, and holistic wellness for maximum healthspan.
+                    </p>
+                    <ul>
+                        <li><strong>AI Longevity Coach:</strong> Personalized recommendations based on your unique biology.</li>
+                        <li><strong>Voice Biomarker Analysis:</strong> Detect stress and health patterns through voice.</li>
+                        <li><strong>Multi-Device Integration:</strong> Seamlessly connect Fitbit, Oura, Apple Watch, and more.</li>
+                        <li><strong>Holistic Wellness Paths:</strong> Choose Eastern, Western, or Hybrid approaches.</li>
+                    </ul>
+                </>
+            ),
+            link: "/vitalscope"
+        },
 
         {
             title: "DispenseMaster",
@@ -88,24 +106,6 @@ const Products = ({ products }) => {
             link: "/dispensemaster"
         },
 
-        {
-            title: "VitalScope",
-            subtitle: "AI-Powered Longevity Coach & Health Optimization Platform",
-            description: (
-                <>
-                    <p>
-                        Transform your health data into personalized longevity insights and optimize your biological age with cutting-edge AI. Combine wearable data, voice biomarkers, and holistic wellness for maximum healthspan.
-                    </p>
-                    <ul>
-                        <li><strong>AI Longevity Coach:</strong> Personalized recommendations based on your unique biology.</li>
-                        <li><strong>Voice Biomarker Analysis:</strong> Detect stress and health patterns through voice.</li>
-                        <li><strong>Multi-Device Integration:</strong> Seamlessly connect Fitbit, Oura, Apple Watch, and more.</li>
-                        <li><strong>Holistic Wellness Paths:</strong> Choose Eastern, Western, or Hybrid approaches.</li>
-                    </ul>
-                </>
-            ),
-            link: "/vitalscope"
-        },
 
     ];
 
