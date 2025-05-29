@@ -152,11 +152,11 @@ const ContactUs = () => {
               <input
                 type="checkbox"
                 name="interests"
-                value="LeafBridgeConnect"
-                checked={formData.interests.includes("LeafBridgeConnect")}
+                value="VitalScope"
+                checked={formData.interests.includes("VitalScope")}
                 onChange={handleChange}
               />
-              LeafBridgeConnect
+              VitalScope
             </label>
           </div>
 

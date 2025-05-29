@@ -68,7 +68,7 @@ const GetInTouch = () => {
           <h2 className="text-center mb-4">Get In Touch</h2>
           <p className="text-center mb-4">
             Stay connected with <strong>DispenseMaster</strong> and{" "}
-            <strong>LeafBridgeConnect</strong>! Subscribe to receive updates on the
+            <strong>VitalScope</strong>! Subscribe to receive updates on the
             latest features, industry insights, and exclusive deals.
           </p>
           
@@ -123,7 +123,7 @@ const GetInTouch = () => {
                   "Updates on StreampireX",
                   "CypherSifu",
                   "DispenseMaster",
-                  "LeafBridgeConnect"
+                  "VitalScope"
                 ].map((interest) => (
                   <div className="form-check mb-2" key={interest}>
                     <input

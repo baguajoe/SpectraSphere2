@@ -27,8 +27,8 @@ const Products = ({ products }) => {
             ),
             link: "/streampirex"
         },
-        
-        
+
+
         {
             title: "DoppelFlex",
             subtitle: "AI-Powered Selfie-to-3D Avatar Creation & Real-Time Motion Capture",
@@ -47,7 +47,7 @@ const Products = ({ products }) => {
             ),
             link: "/doppelflex"
         },
-        
+
         {
             title: "CypherSifu",
             subtitle: "AI Flow Coach & Voice-to-Beat Training App",
@@ -69,7 +69,7 @@ const Products = ({ products }) => {
         },
 
 
-    {
+        {
             title: "DispenseMaster",
             subtitle: "CRM & B2B Management for the Cannabis Industry",
             description: (
@@ -89,21 +89,22 @@ const Products = ({ products }) => {
         },
 
         {
-            title: "LeafBridgeConnect",
-            subtitle: "Smart Compliance, Inventory, and Analytics Platform",
+            title: "VitalScope",
+            subtitle: "AI-Powered Longevity Coach & Health Optimization Platform",
             description: (
                 <>
                     <p>
-                        Manage your cannabis business seamlessly with tools for inventory, compliance, and trend analysis. Save time, improve collaboration, and make smarter decisions with data-driven insights.
+                        Transform your health data into personalized longevity insights and optimize your biological age with cutting-edge AI. Combine wearable data, voice biomarkers, and holistic wellness for maximum healthspan.
                     </p>
                     <ul>
-                        <li><strong>Real-Time Inventory:</strong> Monitor stock with automated alerts.</li>
-                        <li><strong>Compliance Tracking:</strong> Stay ahead with built-in regulatory tools.</li>
-                        <li><strong>Customizable Dashboards:</strong> Focus on metrics that matter.</li>
+                        <li><strong>AI Longevity Coach:</strong> Personalized recommendations based on your unique biology.</li>
+                        <li><strong>Voice Biomarker Analysis:</strong> Detect stress and health patterns through voice.</li>
+                        <li><strong>Multi-Device Integration:</strong> Seamlessly connect Fitbit, Oura, Apple Watch, and more.</li>
+                        <li><strong>Holistic Wellness Paths:</strong> Choose Eastern, Western, or Hybrid approaches.</li>
                     </ul>
                 </>
             ),
-            link: "/leafbridgeconnect"
+            link: "/vitalscope"
         },
 
     ];
